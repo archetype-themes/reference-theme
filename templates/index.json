@@ -1,4 +1,18 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "media-with-text": {
+      "type": "media-with-text",
+      "blocks": {
+        "video": {
+          "type": "video"
+        }
+      },
+      "block_order": [
+        "video"
+      ]
+    }
+  },
+  "order": [
+    "media-with-text"
+  ]
 }
