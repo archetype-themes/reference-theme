@@ -11,7 +11,9 @@
 
   <meta name="description" content="">
 
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {%- render 'css-variables' -%}
+  {{- 'reference-compnents.css' | asset_url | stylesheet_tag: preload: true -}}
+  {%- render 'import-map' -%}
   <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
   {{ content_for_header }}
