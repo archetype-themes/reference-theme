@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="{{ request.locale.iso_code }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="">
-  <link rel="canonical" href="{{ canonical_url }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
 
-  <title>{{ shop.name }}</title>
+    <title>{{ shop.name }}</title>
 
-  <meta name="description" content="">
+    <meta name="description" content="">
 
-  {%- render 'css-variables' -%}
-  {{- 'reference-compnents.css' | asset_url | stylesheet_tag: preload: true -}}
-  {%- render 'import-map' -%}
-  <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+    {%- render 'css-variables' -%}
+    {%- render 'import-map' -%}
 
-  {{ content_for_header }}
-</head>
+    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
-<body>
-  {{ content_for_layout }}
-</body>
+    {{ content_for_header }}
+  </head>
+
+  <body>
+    {{ content_for_layout }}
+  </body>
 </html>
