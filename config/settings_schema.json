@@ -6,5 +6,191 @@
     "theme_author": "THEME_AUTHOR",
     "theme_documentation_url": "https:\/\/THEME_DOCUMENTATION_URL.com\/",
     "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
+  },
+  {
+    "name": "t:labels.typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:labels.headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font_family",
+        "label": "t:labels.font",
+        "default": "poppins_n7"
+      },
+      {
+        "type": "select",
+        "id": "type_header_spacing",
+        "label": "t:labels.letter_spacing",
+        "default": "25",
+        "options": [
+          {
+            "value": "-75",
+            "label": "-75"
+          },
+          {
+            "value": "-50",
+            "label": "-50"
+          },
+          {
+            "value": "-25",
+            "label": "-25"
+          },
+          {
+            "value": "-10",
+            "label": "-10"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "25",
+            "label": "25"
+          },
+          {
+            "value": "50",
+            "label": "50"
+          },
+          {
+            "value": "75",
+            "label": "75"
+          },
+          {
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "value": "150",
+            "label": "150"
+          },
+          {
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "value": "250",
+            "label": "250"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "type_header_base_size",
+        "label": "t:labels.base_size",
+        "default": 32,
+        "min": 22,
+        "max": 60,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_header_line_height",
+        "label": "t:labels.line_height",
+        "default": 1.4,
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1
+      },
+      {
+        "type": "checkbox",
+        "id": "type_header_capitalize",
+        "label": "t:labels.capitalize"
+      },
+      {
+        "type": "header",
+        "content": "t:labels.body_text"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_base_font_family",
+        "label": "t:labels.font",
+        "default": "poppins_n5"
+      },
+      {
+        "type": "select",
+        "id": "type_base_spacing",
+        "label": "t:labels.letter_spacing",
+        "default": "50",
+        "options": [
+          {
+            "value": "-75",
+            "label": "-75"
+          },
+          {
+            "value": "-50",
+            "label": "-50"
+          },
+          {
+            "value": "-25",
+            "label": "-25"
+          },
+          {
+            "value": "-10",
+            "label": "-10"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          },
+          {
+            "value": "25",
+            "label": "25"
+          },
+          {
+            "value": "50",
+            "label": "50"
+          },
+          {
+            "value": "75",
+            "label": "75"
+          },
+          {
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "value": "150",
+            "label": "150"
+          },
+          {
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "value": "250",
+            "label": "250"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "type_base_size",
+        "label": "t:labels.base_size",
+        "default": 16,
+        "min": 12,
+        "max": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_base_line_height",
+        "label": "t:labels.line_height",
+        "default": 1.4,
+        "min": 1,
+        "max": 2,
+        "step": 0.1
+      }
+    ]
   }
 ]
