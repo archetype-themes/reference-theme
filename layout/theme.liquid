@@ -11,8 +11,12 @@
 
     <meta name="description" content="">
 
-    {%- render 'css-variables' -%}
     {%- render 'import-map' -%}
+    {%- render 'es-module-shims' -%}
+    {%- render 'is-land' -%}
+    {%- render 'preload-js' -%}
+
+    {%- render 'css-variables' -%}
 
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
