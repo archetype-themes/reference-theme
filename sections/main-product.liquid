@@ -1,1 +1,37 @@
-{%- render 'section-main-product' -%}
+{%- liquid
+  capture blocks
+    for block in section.blocks
+      case block.type
+        when 'description'
+        render 'block-description', block: block
+      endcase
+    endfor
+  endcapture
+-%}
+
+{%- render 'section-main-product',
+  slot: blocks
+-%}
+
+{% schema %}
+{
+  "name": "t:labels.product",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "description",
+      "name": "t:labels.description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "is_tab",
+          "label": "t:actions.show_as_tab"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
