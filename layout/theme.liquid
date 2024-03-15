@@ -14,12 +14,24 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
     {% comment %}theme-check-disable AssetPreload{% endcomment %}
-    {%- unless settings.heading_font.system? -%}
-      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- unless settings.type_header_font_family.system? -%}
+      <link
+        rel="preload"
+        href="{{ settings.type_header_font_family | font_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin
+      >
     {%- endunless -%}
 
-    {%- unless settings.text_font.system? -%}
-      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- unless settings.type_base_font_family.system? -%}
+      <link
+        rel="preload"
+        href="{{ settings.type_base_font_family | font_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin
+      >
     {%- endunless -%}
     {% comment %}theme-check-enable AssetPreload{% endcomment %}
 
@@ -27,6 +39,23 @@
     {%- render 'es-module-shims' -%}
     {%- render 'is-land' -%}
     {%- render 'preload-js' -%}
+
+    {%- liquid
+      assign header_font = settings.type_header_font_family
+      assign base_font = settings.type_base_font_family
+      assign base_font_bold = base_font | font_modify: 'weight', '600'
+      assign base_font_italic = base_font | font_modify: 'style', 'italic'
+      assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
+    -%}
+
+    {%- style -%}
+      {{ header_font | font_face: font_display: 'swap' }}
+      {{ base_font | font_face: font_display: 'swap' }}
+
+      {{ base_font_bold | font_face: font_display: 'swap' }}
+      {{ base_font_italic | font_face: font_display: 'swap' }}
+      {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+    {%- endstyle -%}
 
     {%- render 'css-variables' -%}
 
