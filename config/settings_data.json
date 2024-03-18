@@ -1,6 +1,9 @@
 {
   "current": "Default",
   "presets": {
-    "Default": {}
+    "Default": {
+      "color_body_bg": "#f5f4f4",
+      "color_body_text": "#4b3613"
+    }
   }
 }

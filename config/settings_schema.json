@@ -8,6 +8,27 @@
     "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
   },
   {
+    "name": "t:labels.colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:labels.general"
+      },
+      {
+        "type": "color",
+        "id": "color_body_bg",
+        "label": "t:labels.background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "t:labels.text",
+        "default": "#1c1d1d"
+      }
+    ]
+  },
+  {
     "name": "t:labels.typography",
     "settings": [
       {
