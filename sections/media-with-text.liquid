@@ -54,34 +54,6 @@
     },
     {
       "type": "select",
-      "id": "media_crop",
-      "label": "t:labels.media_crop",
-      "default": "landscape",
-      "options": [
-        {
-          "value": "16-9",
-          "label": "16:9"
-        },
-        {
-          "value": "4-3",
-          "label": "4:3"
-        },
-        {
-          "value": "portrait",
-          "label": "t:labels.portrait"
-        },
-        {
-          "value": "landscape",
-          "label": "t:labels.landscape"
-        },
-        {
-          "value": "square",
-          "label": "t:labels.square"
-        }
-      ]
-    },
-    {
-      "type": "select",
       "id": "layout",
       "label": "t:labels.layout_on_desktop",
       "default": "right",
@@ -241,6 +213,30 @@
           "accept": ["youtube", "vimeo"]
         },
         {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "16-9",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
+        },
+        {
           "type": "checkbox",
           "id": "autoplay",
           "label": "t:actions.autoplay_video",
@@ -284,6 +280,30 @@
           "type": "image_picker",
           "id": "image",
           "label": "t:labels.image"
+        },
+        {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "square",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
         }
       ]
     },
@@ -296,6 +316,30 @@
           "id": "product",
           "label": "Product",
           "info": "Product must have a 3D model media type"
+        },
+        {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "square",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
         }
       ]
     }
