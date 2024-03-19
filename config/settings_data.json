@@ -3,7 +3,8 @@
   "presets": {
     "Default": {
       "color_body_bg": "#f5f4f4",
-      "color_body_text": "#4b3613"
+      "color_body_text": "#4b3613",
+      "color_borders": "#d1c6c6"
     }
   }
 }

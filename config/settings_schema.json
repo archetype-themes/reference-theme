@@ -25,6 +25,12 @@
         "id": "color_body_text",
         "label": "t:labels.text",
         "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "t:labels.lines_and_borders",
+        "default": "#1c1d1d"
       }
     ]
   },
