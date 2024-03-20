@@ -66,5 +66,15 @@
 
   <body>
     {{ content_for_layout }}
+
+    <script>
+      var theme = {
+        strings: {
+          addToCart: {{ 'actions.add_to_cart' | t | json }},
+          soldOut: {{ 'info.sold_out' | t | json }},
+          unavailable: {{ 'info.unavailable' | t | json }}
+        }
+      };
+    </script>
   </body>
 </html>
