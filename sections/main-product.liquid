@@ -6,6 +6,8 @@
           render 'block-description', block: block
         when 'variant_picker'
           render 'block-variant-picker', block: block
+        when 'buy_buttons'
+          render 'block-buy-buttons', block: block
       endcase
     endfor
   endcapture
@@ -48,6 +50,20 @@
             }
           ],
           "default": "button"
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "t:labels.buy_buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "label": "t:actions.show_dynamic_checkout",
+          "info": "t:info.lets_customers_checkout_familiar",
+          "default": true
         }
       ]
     }
