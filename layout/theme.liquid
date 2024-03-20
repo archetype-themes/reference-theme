@@ -55,6 +55,16 @@
       {{ base_font_bold | font_face: font_display: 'swap' }}
       {{ base_font_italic | font_face: font_display: 'swap' }}
       {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+
+      {%- for scheme in settings.color_schemes -%}
+        .color-{{ scheme.id }} {
+          --color-background: {{ scheme.settings.background.rgb }};
+          --color-foreground: {{ scheme.settings.text.rgb }};
+
+          background-color: rgb(var(--color-background));
+          color: rgb(var(--color-foreground));
+        }
+      {%- endfor -%}
     {%- endstyle -%}
 
     {%- render 'css-variables' -%}

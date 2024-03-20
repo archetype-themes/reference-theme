@@ -11,6 +11,86 @@
     "name": "t:labels.colors",
     "settings": [
       {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "header",
+            "content": "t:labels.typography"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "Text",
+            "default": "#121212"
+          },
+          {
+            "type": "header",
+            "content": "t:labels.background"
+          },
+          {
+            "type": "color",
+            "id": "background",
+            "label": "t:labels.background",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "primary_button",
+            "label": "Primary",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "on_primary_button",
+            "label": "On Primary Button",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_border",
+            "label": "Primary Button Border",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button",
+            "label": "Secondary Button"
+          },
+          {
+            "type": "color",
+            "id": "on_secondary_button",
+            "label": "On Secondary Button",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "Secondary Button Border",
+            "default": "#FFFFFF"
+          }
+        ],
+        "role": {
+          "background": {
+            "solid": "background"
+          },
+          "text": "text",
+          "primary_button": "primary_button",
+          "on_primary_button": "on_primary_button",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button",
+          "on_secondary_button": "on_secondary_button",
+          "secondary_button_border": "secondary_button_border",
+          "icons": "text",
+          "links": "text"
+        }
+      }
+    ]
+  },
+  {
+    "name": "t:labels.colors",
+    "settings": [
+      {
         "type": "header",
         "content": "t:labels.general"
       },
@@ -45,90 +125,7 @@
         "type": "font_picker",
         "id": "type_header_font_family",
         "label": "t:labels.font",
-        "default": "poppins_n7"
-      },
-      {
-        "type": "select",
-        "id": "type_header_spacing",
-        "label": "t:labels.letter_spacing",
-        "default": "25",
-        "options": [
-          {
-            "value": "-75",
-            "label": "-75"
-          },
-          {
-            "value": "-50",
-            "label": "-50"
-          },
-          {
-            "value": "-25",
-            "label": "-25"
-          },
-          {
-            "value": "-10",
-            "label": "-10"
-          },
-          {
-            "value": "0",
-            "label": "0"
-          },
-          {
-            "value": "10",
-            "label": "10"
-          },
-          {
-            "value": "25",
-            "label": "25"
-          },
-          {
-            "value": "50",
-            "label": "50"
-          },
-          {
-            "value": "75",
-            "label": "75"
-          },
-          {
-            "value": "100",
-            "label": "100"
-          },
-          {
-            "value": "150",
-            "label": "150"
-          },
-          {
-            "value": "200",
-            "label": "200"
-          },
-          {
-            "value": "250",
-            "label": "250"
-          }
-        ]
-      },
-      {
-        "type": "range",
-        "id": "type_header_base_size",
-        "label": "t:labels.base_size",
-        "default": 32,
-        "min": 22,
-        "max": 60,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "type_header_line_height",
-        "label": "t:labels.line_height",
-        "default": 1.4,
-        "min": 0.8,
-        "max": 2,
-        "step": 0.1
-      },
-      {
-        "type": "checkbox",
-        "id": "type_header_capitalize",
-        "label": "t:labels.capitalize"
+        "default": "inter_n7"
       },
       {
         "type": "header",
@@ -138,85 +135,7 @@
         "type": "font_picker",
         "id": "type_base_font_family",
         "label": "t:labels.font",
-        "default": "poppins_n5"
-      },
-      {
-        "type": "select",
-        "id": "type_base_spacing",
-        "label": "t:labels.letter_spacing",
-        "default": "50",
-        "options": [
-          {
-            "value": "-75",
-            "label": "-75"
-          },
-          {
-            "value": "-50",
-            "label": "-50"
-          },
-          {
-            "value": "-25",
-            "label": "-25"
-          },
-          {
-            "value": "-10",
-            "label": "-10"
-          },
-          {
-            "value": "0",
-            "label": "0"
-          },
-          {
-            "value": "10",
-            "label": "10"
-          },
-          {
-            "value": "25",
-            "label": "25"
-          },
-          {
-            "value": "50",
-            "label": "50"
-          },
-          {
-            "value": "75",
-            "label": "75"
-          },
-          {
-            "value": "100",
-            "label": "100"
-          },
-          {
-            "value": "150",
-            "label": "150"
-          },
-          {
-            "value": "200",
-            "label": "200"
-          },
-          {
-            "value": "250",
-            "label": "250"
-          }
-        ]
-      },
-      {
-        "type": "range",
-        "id": "type_base_size",
-        "label": "t:labels.base_size",
-        "default": 16,
-        "min": 12,
-        "max": 20,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "type_base_line_height",
-        "label": "t:labels.line_height",
-        "default": 1.4,
-        "min": 1,
-        "max": 2,
-        "step": 0.1
+        "default": "inter_n4"
       }
     ]
   }
