@@ -8,6 +8,31 @@
     "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
   },
   {
+    "name": "t:labels.typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:labels.headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "t:labels.font",
+        "default": "inter_n7"
+      },
+      {
+        "type": "header",
+        "content": "t:labels.body_text"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "t:labels.font",
+        "default": "inter_n4"
+      }
+    ]
+  },
+  {
     "name": "t:labels.colors",
     "settings": [
       {
@@ -15,58 +40,15 @@
         "id": "color_schemes",
         "definition": [
           {
-            "type": "header",
-            "content": "t:labels.typography"
-          },
-          {
             "type": "color",
             "id": "text",
             "label": "Text",
             "default": "#121212"
           },
           {
-            "type": "header",
-            "content": "t:labels.background"
-          },
-          {
             "type": "color",
             "id": "background",
             "label": "t:labels.background",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "color",
-            "id": "primary_button",
-            "label": "Primary",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "on_primary_button",
-            "label": "On Primary Button",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "color",
-            "id": "primary_button_border",
-            "label": "Primary Button Border",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "secondary_button",
-            "label": "Secondary Button"
-          },
-          {
-            "type": "color",
-            "id": "on_secondary_button",
-            "label": "On Secondary Button",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "secondary_button_border",
-            "label": "Secondary Button Border",
             "default": "#FFFFFF"
           }
         ],
@@ -75,12 +57,12 @@
             "solid": "background"
           },
           "text": "text",
-          "primary_button": "primary_button",
-          "on_primary_button": "on_primary_button",
-          "primary_button_border": "primary_button_border",
-          "secondary_button": "secondary_button",
-          "on_secondary_button": "on_secondary_button",
-          "secondary_button_border": "secondary_button_border",
+          "primary_button": "text",
+          "on_primary_button": "background",
+          "primary_button_border": "text",
+          "secondary_button": "background",
+          "on_secondary_button": "text",
+          "secondary_button_border": "text",
           "icons": "text",
           "links": "text"
         }
@@ -111,31 +93,6 @@
         "id": "color_borders",
         "label": "t:labels.lines_and_borders",
         "default": "#1c1d1d"
-      }
-    ]
-  },
-  {
-    "name": "t:labels.typography",
-    "settings": [
-      {
-        "type": "header",
-        "content": "t:labels.headings"
-      },
-      {
-        "type": "font_picker",
-        "id": "type_header_font_family",
-        "label": "t:labels.font",
-        "default": "inter_n7"
-      },
-      {
-        "type": "header",
-        "content": "t:labels.body_text"
-      },
-      {
-        "type": "font_picker",
-        "id": "type_base_font_family",
-        "label": "t:labels.font",
-        "default": "inter_n4"
       }
     ]
   }

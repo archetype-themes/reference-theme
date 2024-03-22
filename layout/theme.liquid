@@ -13,49 +13,18 @@
 
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
-    {% comment %}theme-check-disable AssetPreload{% endcomment %}
-    {%- unless settings.type_header_font_family.system? -%}
-      <link
-        rel="preload"
-        href="{{ settings.type_header_font_family | font_url }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-      >
-    {%- endunless -%}
-
-    {%- unless settings.type_base_font_family.system? -%}
-      <link
-        rel="preload"
-        href="{{ settings.type_base_font_family | font_url }}"
-        as="font"
-        type="font/woff2"
-        crossorigin
-      >
-    {%- endunless -%}
-    {% comment %}theme-check-enable AssetPreload{% endcomment %}
+    {%- render 'font-preload-link', font: settings.type_heading_font -%}
+    {%- render 'font-preload-link', font: settings.type_body_font -%}
 
     {%- render 'import-map' -%}
     {%- render 'es-module-shims' -%}
     {%- render 'is-land' -%}
     {%- render 'preload-js' -%}
 
-    {%- liquid
-      assign header_font = settings.type_header_font_family
-      assign base_font = settings.type_base_font_family
-      assign base_font_bold = base_font | font_modify: 'weight', '600'
-      assign base_font_italic = base_font | font_modify: 'style', 'italic'
-      assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
-    -%}
+    {%- render 'font-faces' -%}
+    {%- render 'css-variables' -%}
 
     {%- style -%}
-      {{ header_font | font_face: font_display: 'swap' }}
-      {{ base_font | font_face: font_display: 'swap' }}
-
-      {{ base_font_bold | font_face: font_display: 'swap' }}
-      {{ base_font_italic | font_face: font_display: 'swap' }}
-      {{ base_font_bold_italic | font_face: font_display: 'swap' }}
-
       {%- for scheme in settings.color_schemes -%}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.rgb }};
@@ -66,8 +35,6 @@
         }
       {%- endfor -%}
     {%- endstyle -%}
-
-    {%- render 'css-variables' -%}
 
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
