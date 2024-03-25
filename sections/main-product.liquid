@@ -10,6 +10,8 @@
           render 'block-buy-buttons', block: block
         when 'title'
           render 'block-title', block: block
+        when 'price'
+          render 'block-price', block: block
       endcase
     endfor
   endcapture
@@ -40,6 +42,11 @@
           "label": "t:actions.show_sku"
         }
       ]
+    },
+    {
+      "type": "price",
+      "name": "t:labels.price",
+      "limit": 1
     },
     {
       "type": "description",
@@ -89,4 +96,3 @@
   ]
 }
 {% endschema %}
-
