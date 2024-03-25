@@ -8,6 +8,8 @@
           render 'block-variant-picker', block: block
         when 'buy_buttons'
           render 'block-buy-buttons', block: block
+        when 'title'
+          render 'block-title', block: block
       endcase
     endfor
   endcapture
@@ -22,6 +24,23 @@
 
   ],
   "blocks": [
+    {
+      "type": "title",
+      "name": "t:labels.title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "vendor_enable",
+          "label": "t:actions.show_vendor"
+        },
+        {
+          "type": "checkbox",
+          "id": "sku_enable",
+          "label": "t:actions.show_sku"
+        }
+      ]
+    },
     {
       "type": "description",
       "name": "t:labels.description",
@@ -70,3 +89,4 @@
   ]
 }
 {% endschema %}
+
