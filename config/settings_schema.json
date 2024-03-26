@@ -95,5 +95,38 @@
         "default": "#1c1d1d"
       }
     ]
+  },
+  {
+    "name": "t:labels.products",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "superscript_decimals",
+        "label": "t:actions.show_cents_as",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_save_amount",
+        "label": "t:actions.show_saved_amount",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_save_type",
+        "label": "t:labels.savings_display_style",
+        "default": "dollar",
+        "options": [
+          {
+            "value": "dollar",
+            "label": "t:labels.amount"
+          },
+          {
+            "value": "percent",
+            "label": "t:labels.percent"
+          }
+        ]
+      }
+    ]
   }
 ]
