@@ -42,13 +42,13 @@
           {
             "type": "color",
             "id": "text",
-            "label": "Text",
+            "label": "Primary",
             "default": "#121212"
           },
           {
             "type": "color",
             "id": "background",
-            "label": "t:labels.background",
+            "label": "Secondary",
             "default": "#FFFFFF"
           }
         ],
