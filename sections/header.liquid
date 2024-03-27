@@ -1,0 +1,56 @@
+{% liquid
+  render 'section-header'
+%}
+
+{% schema %}
+{
+  "name": "t:labels.header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu_link_list",
+      "label": "t:labels.navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "menu_position",
+      "label": "t:labels.layout",
+      "default": "logo_left_menu_left",
+      "options": [
+        {
+          "value": "logo_left_menu_left",
+          "label": "t:labels.logo_left_menu_left"
+        },
+        {
+          "value": "logo_left_menu_center",
+          "label": "t:labels.logo_left_menu_center"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "cart_icon",
+      "label": "t:labels.cart_icon",
+      "default": "cart",
+      "options": [
+        {
+          "value": "bag",
+          "label": "t:labels.bag"
+        },
+        {
+          "value": "cart",
+          "label": "t:labels.cart"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

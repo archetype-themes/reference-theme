@@ -13,8 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
-    {%- render 'font-preload-link', font: settings.type_heading_font -%}
-    {%- render 'font-preload-link', font: settings.type_body_font -%}
+    {%- render 'font-preload-link', font: settings.heading_font -%}
+    {%- render 'font-preload-link', font: settings.body_font -%}
 
     {%- render 'import-map' -%}
     {%- render 'es-module-shims' -%}
@@ -42,6 +42,7 @@
   </head>
 
   <body>
+    {%- sections 'header-group' -%}
     {{ content_for_layout }}
   </body>
 </html>
