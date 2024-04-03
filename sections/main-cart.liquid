@@ -1,0 +1,42 @@
+{%- liquid
+  capture blocks
+    for block in section.blocks
+      case block.type
+        when '@app'
+          render block
+        when 'totals'
+          render 'block-cart-totals', block: block
+        when 'note'
+          render 'block-cart-note', block: block
+        when 'checkout_button'
+          render 'block-cart-checkout-button', block: block
+      endcase
+    endfor
+  endcapture
+
+  render 'section-main-cart', slot: blocks
+-%}
+
+{% schema %}
+{
+  "name": "t:labels.cart",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "totals",
+      "name": "Totals",
+      "limit": 1
+    },
+    {
+      "type": "note",
+      "name": "Cart note",
+      "limit": 1
+    },
+    {
+      "type": "checkout_button",
+      "name": "Checkout button",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

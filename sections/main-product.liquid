@@ -2,6 +2,8 @@
   capture blocks
     for block in section.blocks
       case block.type
+        when '@app'
+          render block
         when 'description'
           render 'block-description', block: block
         when 'variant_picker'
@@ -15,16 +17,14 @@
       endcase
     endfor
   endcapture
--%}
 
-{%- render 'section-main-product', slot: blocks -%}
+  render 'section-main-product', slot: blocks
+-%}
 
 {% schema %}
 {
   "name": "t:labels.product",
-  "settings": [
-
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "title",
@@ -52,9 +52,7 @@
       "type": "description",
       "name": "t:labels.description",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "type": "variant_picker",
