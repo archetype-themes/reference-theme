@@ -25,7 +25,7 @@
 
     {%- style -%}
       {%- for scheme in settings.color_schemes -%}
-        .color-{{ scheme.id }} {
+        [data-color-scheme="{{ scheme.id }}"] {
           --color-background: {{ scheme.settings.background.rgb }};
           --color-foreground: {{ scheme.settings.text.rgb }};
 
