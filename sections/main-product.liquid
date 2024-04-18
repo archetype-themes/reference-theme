@@ -24,7 +24,32 @@
 {% schema %}
 {
   "name": "t:labels.product",
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:labels.media"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:info.learn_more_media_types"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:labels.position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    }
+  ],
   "blocks": [
     {
       "type": "@app"
