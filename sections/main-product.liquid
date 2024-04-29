@@ -18,7 +18,7 @@
     endfor
   endcapture
 
-  render 'section-main-product', slot: blocks
+  render 'section-main-product', slot_product_blocks: blocks
 -%}
 
 {% schema %}
@@ -37,7 +37,6 @@
       "type": "select",
       "id": "image_position",
       "label": "t:labels.position",
-      "default": "left",
       "options": [
         {
           "value": "left",
@@ -47,7 +46,8 @@
           "value": "right",
           "label": "t:labels.alignments.right"
         }
-      ]
+      ],
+      "default": "left"
     }
   ],
   "blocks": [
@@ -62,13 +62,14 @@
         {
           "type": "inline_richtext",
           "id": "vendor_enable",
-          "default": "{{ product.vendor }}",
-          "label": "t:actions.show_vendor"
+          "label": "t:actions.show_vendor",
+          "default": "{{ product.vendor }}"
         },
         {
           "type": "checkbox",
           "id": "sku_enable",
-          "label": "t:actions.show_sku"
+          "label": "t:actions.show_sku",
+          "default": true
         }
       ]
     },
@@ -115,8 +116,8 @@
           "type": "checkbox",
           "id": "show_dynamic_checkout",
           "label": "t:actions.show_dynamic_checkout",
-          "info": "t:info.lets_customers_checkout_familiar",
-          "default": true
+          "default": true,
+          "info": "t:info.lets_customers_checkout_familiar"
         }
       ]
     }
