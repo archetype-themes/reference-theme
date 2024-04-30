@@ -1,6 +1,6 @@
-{% liquid
+{%- liquid
   render 'section-header'
-%}
+-%}
 
 {% schema %}
 {
@@ -17,7 +17,6 @@
       "type": "select",
       "id": "menu_position",
       "label": "t:labels.layout",
-      "default": "logo_left_menu_left",
       "options": [
         {
           "value": "logo_left_menu_left",
@@ -27,13 +26,13 @@
           "value": "logo_left_menu_center",
           "label": "t:labels.logo_left_menu_center"
         }
-      ]
+      ],
+      "default": "logo_left_menu_left"
     },
     {
       "type": "select",
       "id": "cart_icon",
       "label": "t:labels.cart_icon",
-      "default": "bag",
       "options": [
         {
           "value": "bag",
@@ -43,7 +42,8 @@
           "value": "cart",
           "label": "t:labels.cart"
         }
-      ]
+      ],
+      "default": "bag"
     },
     {
       "type": "color_scheme",

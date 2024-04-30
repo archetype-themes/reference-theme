@@ -1,4 +1,4 @@
-{% liquid
+{%- liquid
   capture block
     for block in section.blocks
       case block.type
@@ -15,7 +15,7 @@
   endcapture
 
   render 'section-media-with-text', slot: block
-%}
+-%}
 
 {% schema %}
 {
@@ -36,7 +36,6 @@
       "type": "select",
       "id": "media_width",
       "label": "t:labels.media_width",
-      "default": "50",
       "options": [
         {
           "value": "33",
@@ -50,13 +49,13 @@
           "value": "66",
           "label": "t:labels.sizes.large"
         }
-      ]
+      ],
+      "default": "50"
     },
     {
       "type": "select",
       "id": "layout",
       "label": "t:labels.layout_on_desktop",
-      "default": "right",
       "options": [
         {
           "value": "left",
@@ -66,13 +65,13 @@
           "value": "right",
           "label": "t:labels.media_on_right"
         }
-      ]
+      ],
+      "default": "right"
     },
     {
       "type": "select",
       "id": "content_alignment",
       "label": "t:labels.content_alignment",
-      "default": "left",
       "options": [
         {
           "value": "left",
@@ -86,13 +85,13 @@
           "value": "right",
           "label": "t:labels.alignments.right"
         }
-      ]
+      ],
+      "default": "left"
     },
     {
       "type": "select",
       "id": "content_position",
       "label": "t:labels.content_position",
-      "default": "center",
       "options": [
         {
           "value": "top",
@@ -106,7 +105,8 @@
           "value": "bottom",
           "label": "t:labels.alignments.bottom"
         }
-      ]
+      ],
+      "default": "center"
     },
     {
       "type": "header",
@@ -127,7 +127,6 @@
       "type": "select",
       "id": "heading_size",
       "label": "t:labels.heading_size",
-      "default": "h2",
       "options": [
         {
           "value": "h3",
@@ -145,7 +144,8 @@
           "value": "h0",
           "label": "t:labels.sizes.extra_large"
         }
-      ]
+      ],
+      "default": "h2"
     },
     {
       "type": "richtext",
@@ -193,7 +193,6 @@
           "type": "select",
           "id": "media_crop",
           "label": "t:labels.media_crop",
-          "default": "16-9",
           "options": [
             {
               "value": "16-9",
@@ -211,7 +210,8 @@
               "value": "square",
               "label": "t:labels.square"
             }
-          ]
+          ],
+          "default": "16-9"
         },
         {
           "type": "checkbox",
@@ -262,7 +262,6 @@
           "type": "select",
           "id": "media_crop",
           "label": "t:labels.media_crop",
-          "default": "square",
           "options": [
             {
               "value": "16-9",
@@ -280,7 +279,8 @@
               "value": "square",
               "label": "t:labels.square"
             }
-          ]
+          ],
+          "default": "square"
         }
       ]
     },
@@ -298,7 +298,6 @@
           "type": "select",
           "id": "media_crop",
           "label": "t:labels.media_crop",
-          "default": "square",
           "options": [
             {
               "value": "16-9",
@@ -316,7 +315,8 @@
               "value": "square",
               "label": "t:labels.square"
             }
-          ]
+          ],
+          "default": "square"
         }
       ]
     }
