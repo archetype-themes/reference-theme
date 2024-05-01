@@ -1,0 +1,56 @@
+{%- comment -%}
+  Renders the first 3D model of a product
+
+  Accepts:
+  - product {product} - Product object
+  - media {media} - Media object
+  - autoplay {Boolean} - Whether the model should autoplay
+  - media_crop {'16-9'|'portrait'|'landscape'|'square'} - Crop type of the media
+  - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
+
+  Usage:
+  {% render 'block-model', block: block %}
+{%- endcomment -%}
+
+{% liquid
+  assign product = block.settings.product | default: product
+  assign media = media | default: product.media | where: 'media_type', 'model' | first
+  assign autoplay = autoplay | default: block.settings.autoplay
+  assign media_crop = media_crop | default: block.settings.media_crop | default: 'square'
+  assign hydration = hydration | default: 'on:visible'
+%}
+
+<is-land {{ hydration }}>
+  <div
+    class="aspect-ratio--{{ media_crop }}"
+    {{ block.shopify_attributes }}
+  >
+    {% if product != blank %}
+      {% if media %}
+        <link
+          rel="stylesheet"
+          href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+          media="print"
+          onload="this.media='all'; this.onload = null"
+        >
+
+        <model-media
+          handle="{{ product.handle }}"
+          {% if autoplay %}
+            autoplay
+          {% endif %}
+        >
+          {{ media | model_viewer_tag: image_size: '2048x', reveal: 'interaction', toggleable: true }}
+        </model-media>
+      {% endif %}
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import 'components/block-model'
+    </script>
+  </template>
+</is-land>

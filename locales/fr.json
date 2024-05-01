@@ -1,0 +1,28 @@
+{
+  "actions": {
+    "add_to_cart": "Ajouter au panier",
+    "checkout": "Procéder au paiement",
+    "add_order_note": "Ajouter des instructions de commande spéciales",
+    "remove": "Retirer",
+    "continue_shopping": "Continuer vos achats"
+  },
+  "info": {
+    "sold_out": "Épuisé",
+    "unavailable": "Non disponible",
+    "shipping_at_checkout_taxes_included": "Taxes incluses. Expédition et codes de réduction calculés à la caisse.",
+    "shipping_at_checkout": "Les codes promo, les frais d'envoi et les taxes seront ajoutés à la caisse.",
+    "save_amount": "Épargnez {{ saved_amount }}",
+    "placeholder_product_description": "Cette partie est utilisée pour la fiche du produit. Parlez aux clients de l'allure, du ressenti et du style de votre produit. Ajoutez des détails sur la couleur, les matériaux utilisés, le dimensionnement, et où il a été fabriqué.",
+    "cart_empty": "Votre panier est vide."
+  },
+  "labels": {
+    "total": "Total",
+    "price": "Prix",
+    "regular_price": "Prix régulier",
+    "sale_price": "Prix réduit",
+    "example_product": "Titre du produit",
+    "cart": "Panier",
+    "product": "Produit",
+    "quantity": "Quantité"
+  }
+}

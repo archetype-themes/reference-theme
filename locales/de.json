@@ -1,0 +1,28 @@
+{
+  "actions": {
+    "add_to_cart": "In den Einkaufswagen legen",
+    "checkout": "Zur Kasse",
+    "add_order_note": "Besondere Hinweise an den Verkäufer",
+    "remove": "Entfernen",
+    "continue_shopping": "Einkaufen Sie weiter"
+  },
+  "info": {
+    "sold_out": "Ausverkauft",
+    "unavailable": "Nicht verfügbar",
+    "shipping_at_checkout_taxes_included": "Steuern inbegriffen. Rabattcodes und Steuern werden bei der Bezahlung berechnet.",
+    "shipping_at_checkout": "Rabattcodes, Versandkosten und Steuern werden bei der Bezahlung berechnet.",
+    "save_amount": "Sparen {{ saved_amount }}",
+    "placeholder_product_description": "Diesen Abschnitt können Sie nutzen, um die Details Ihres Produkts zu beschreiben. Erzählen Sie den Kunden, wie Ihr Produkt aussieht, sich anfühlt und designt ist. Fügen Sie Einzelheiten zu Farbe, verwendeten Materialien, Größe und Produktionsort hinzu.",
+    "cart_empty": "Ihr Einkaufswagen ist im Moment leer."
+  },
+  "labels": {
+    "total": "Gesamt",
+    "price": "Preis",
+    "regular_price": "Normaler Preis",
+    "sale_price": "Sonderpreis",
+    "example_product": "Beispielhafter Produkttitel",
+    "cart": "Einkaufswagen",
+    "product": "Artikel",
+    "quantity": "Menge"
+  }
+}

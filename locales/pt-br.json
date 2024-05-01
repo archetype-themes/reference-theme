@@ -1,0 +1,28 @@
+{
+  "actions": {
+    "add_to_cart": "Adicionar ao carrinho",
+    "checkout": "Fechar pedido",
+    "add_order_note": "Instruções especiais para o vendedor",
+    "remove": "Remover",
+    "continue_shopping": "Continue comprando"
+  },
+  "info": {
+    "sold_out": "Esgotado",
+    "unavailable": "Indisponível",
+    "shipping_at_checkout_taxes_included": "Taxas incluídas. Códigos de frete e desconto calculados no checkout.",
+    "shipping_at_checkout": "Os códigos de desconto, o frete e os impostos são adicionados no encerramento.",
+    "save_amount": "Economize {{ saved_amount }}",
+    "placeholder_product_description": "Essa área é usada para descrever os detalhes do seu produto. Diga aos clientes sobre a aparência, toque e estilo de seu produto. Adicione detalhes como cor, materiais usados, tamanho e onde foi fabricado.",
+    "cart_empty": "Seu carrinho está vazio no momento."
+  },
+  "labels": {
+    "total": "Total",
+    "price": "Preço",
+    "regular_price": "Preço normal",
+    "sale_price": "Preço promocional",
+    "example_product": "Exemplo de título de produto",
+    "cart": "Carrinho",
+    "product": "Produto",
+    "quantity": "Quantidade"
+  }
+}

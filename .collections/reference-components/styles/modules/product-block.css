@@ -1,0 +1,15 @@
+.product-block {
+  margin-bottom: 30px;
+
+  & hr {
+    margin: 0;
+  }
+}
+
+.product-block--tab + .product-block--tab {
+  margin-top: -30px;
+}
+
+.product-block--sales-point + .product-block--sales-point {
+  margin-top: -20px;
+}

@@ -1,0 +1,21 @@
+{%- comment -%}
+  Renders a link tag to preload a font file
+
+  Accepts:
+  - font {font} - The font to preload
+
+  Usage:
+  {% render 'font-preload-link', font: settings.font_family %}
+{%- endcomment -%}
+
+{% comment %}theme-check-disable AssetPreload{% endcomment %}
+{%- unless font.system? -%}
+  <link
+    rel="preload"
+    href="{{ font | font_url }}"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+{%- endunless -%}
+{% comment %}theme-check-enable AssetPreload{% endcomment %}

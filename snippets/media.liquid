@@ -1,0 +1,39 @@
+{%- comment %}
+  Renders product media
+
+  Accepts:
+  - media {media} - Media object
+  - preload {boolean} - Whether or not to preload the image
+  - sizes {string} - Sizes attribute for the image tag
+
+  Usage:
+  {% render 'media', media: media, preload: true %}
+{%- endcomment %}
+
+{%- liquid
+  assign preload = preload | default: false
+  assign sizes = sizes | default: '(min-width: 64em) 30vw, (min-width: 48em) 25vw, 90vw'
+
+  assign loading = 'lazy'
+  assign fetchpriority = 'auto'
+  if preload
+    assign loading = 'eager'
+    assign fetchpriority = 'high'
+  endif
+-%}
+
+<div class="media">
+  {%- case media.media_type -%}
+    {%- when 'image' -%}
+      {{-
+        media
+        | image_url: width: media.preview_image.width
+        | image_tag:
+          loading: loading,
+          fetchpriority: fetchpriority,
+          sizes: sizes,
+          widths: '180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048',
+          class: 'media__image'
+      -}}
+  {%- endcase -%}
+</div>

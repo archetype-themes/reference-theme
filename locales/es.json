@@ -1,0 +1,28 @@
+{
+  "actions": {
+    "add_to_cart": "Agregar al carrito",
+    "checkout": "Finalizar pedido",
+    "add_order_note": "Instrucciones especiales para el vendedor",
+    "remove": "Quitar",
+    "continue_shopping": "Seguir comprando"
+  },
+  "info": {
+    "sold_out": "Agotado",
+    "unavailable": "No disponible",
+    "shipping_at_checkout_taxes_included": "Impuestos incluidos. Envío y códigos de descuento calculados al finalizar la compra.",
+    "shipping_at_checkout": "Los códigos de descuento, los costes de envío y los impuestos se añaden durante el pago.",
+    "save_amount": "Guardar {{ saved_amount }}",
+    "placeholder_product_description": " Este campo se utiliza para describir los detalles de tu producto. Informa a los clientes acerca de la apariencia, percepción y estilo de tu producto. Incluye detalles sobre el color, los materiales utilizados, el tamaño y donde se hizo.",
+    "cart_empty": "Su carrito actualmente está vacío."
+  },
+  "labels": {
+    "total": "Total",
+    "price": "Precio",
+    "regular_price": "Precio habitual",
+    "sale_price": "Precio de oferta",
+    "example_product": "Ejemplo título de producto",
+    "cart": "Carrito",
+    "product": "Producto",
+    "quantity": "Cantidad"
+  }
+}

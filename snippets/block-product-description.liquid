@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders the product description
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block-product-description', block: block %}
+{%- endcomment -%}
+
+{% liquid
+  assign product = product | default: section.settings.product
+%}
+
+<div class="product-block" {{ block.shopify_attributes }}>
+  {%- render 'product-description', product: product -%}
+</div>
