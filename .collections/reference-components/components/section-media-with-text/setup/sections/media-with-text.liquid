@@ -1,0 +1,335 @@
+{% liquid
+  capture block
+    for block in section.blocks
+      case block.type
+        when '@app'
+          render block
+        when 'image'
+          render 'block-image', block: block
+        when 'video'
+          render 'block-video', block: block
+        when 'model'
+          render 'block-model', block: block, autoplay: true
+      endcase
+    endfor
+  endcapture
+
+  render 'section-media-with-text', slot: block
+%}
+
+{% schema %}
+{
+  "name": "t:labels.media_with_text",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:actions.enable_full_width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:labels.media"
+    },
+    {
+      "type": "select",
+      "id": "media_width",
+      "label": "t:labels.media_width",
+      "default": "50",
+      "options": [
+        {
+          "value": "33",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "50",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "66",
+          "label": "t:labels.sizes.large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:labels.layout_on_desktop",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.media_on_left"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.media_on_right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "t:labels.content_alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "t:labels.content_position",
+      "default": "center",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:labels.alignments.top"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:labels.alignments.bottom"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.content"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:labels.heading",
+      "default": "Media with text"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:labels.heading_size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "h2",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "h1",
+          "label": "t:labels.sizes.large"
+        },
+        {
+          "value": "h0",
+          "label": "t:labels.sizes.extra_large"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:labels.text",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:labels.button_text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "video",
+      "name": "t:labels.video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:labels.video"
+        },
+        {
+          "type": "video_url",
+          "id": "external_video",
+          "label": "YouTube/Vimeo",
+          "accept": ["youtube", "vimeo"]
+        },
+        {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "16-9",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "t:actions.autoplay_video",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "t:actions.loop_video",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_controls",
+          "label": "Show controls",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "mute_video",
+          "label": "t:actions.mute_video",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:labels.fallback_image"
+        },
+        {
+          "type": "image_picker",
+          "id": "alt_image",
+          "label": "t:labels.image",
+          "info": "t:info.image_displays_if_video_fails"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:labels.image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "square",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "name": "3D model",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Product must have a 3D model media type"
+        },
+        {
+          "type": "select",
+          "id": "media_crop",
+          "label": "t:labels.media_crop",
+          "default": "square",
+          "options": [
+            {
+              "value": "16-9",
+              "label": "16:9"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.media_with_text",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

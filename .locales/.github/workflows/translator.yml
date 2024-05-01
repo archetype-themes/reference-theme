@@ -1,0 +1,69 @@
+name: Locale Translation
+
+on:
+  push:
+    branches:
+      - main
+      - test
+    paths:
+      - 'locales/en.default.json'
+      - 'locales/en.default.schema.json'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  AZURE_TRANSLATOR_ENDPOINT: ${{ secrets.AZURE_TRANSLATOR_ENDPOINT }}
+  AZURE_TRANSLATOR_SUBSCRIPTION_KEY: ${{ secrets.AZURE_TRANSLATOR_SUBSCRIPTION_KEY }}
+  AZURE_TRANSLATOR_REGION: ${{ secrets.AZURE_TRANSLATOR_REGION }}
+
+jobs:
+  update-locales:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # Unique key for the cache
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Extract defaultCode from current repo locales.config.json
+      id: extract
+      run: |
+        REPO_NAME="${{ github.repository }}"
+        echo "Current Repository: $REPO_NAME"
+        DEFAULT_CODE=$(jq --raw-output --arg REPO_NAME "$REPO_NAME" '.repos[] | select(.repo == $REPO_NAME) | .defaultCode' locales.config.json)
+        echo "DEFAULT_CODE=$DEFAULT_CODE" >> $GITHUB_ENV
+
+    - name: Output Previous Version of the File
+      run: |
+        git show HEAD~1:locales/${{ env.DEFAULT_CODE }}.default.json > locales/${{ env.DEFAULT_CODE }}.default.old.json
+        git show HEAD~1:locales/${{ env.DEFAULT_CODE }}.default.schema.json > locales/${{ env.DEFAULT_CODE }}.default.old.schema.json
+
+    - name: Run Translation Script
+      run: node scripts/translate-locales.js
+
+    - name: Delete Previous Version of the File
+      run: rm locales/${{ env.DEFAULT_CODE }}.default.old.json
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: Update locale translations
+        title: 'Automated Locale Updates'
+        body: 'This PR contains automated locale translation updates.'
+        branch: 'action/translation-updates'

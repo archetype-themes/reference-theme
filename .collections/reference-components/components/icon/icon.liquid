@@ -1,0 +1,46 @@
+{% comment %}
+  Icon component
+
+  Accepts:
+  - name {string} - Name of the icon
+  - directory {string} - Directory of the icon (optional)
+  - prepend {boolean} - Prepends the icon name with a string (optional)
+  - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
+
+  Usage:
+  {% render 'icon', name: 'alert' %}
+{% endcomment %}
+
+{%- liquid
+  assign name = name
+  assign directory = directory | default: settings.icon_directory | default: 'theme-assets'
+  assign prepend = prepend | default: false
+  assign hydration = hydration | default: 'on:visible'
+
+  if prepend == false
+    assign file_name = name | append: '.svg'
+  else
+    assign prefix = prefix | default: settings.icon_file_prepend | default: 'icon-'
+    assign file_name = name | prepend: prefix | append: '.svg'
+  endif
+
+  if directory == 'theme-assets'
+    assign url = file_name | asset_url
+  else
+    assign url = directory | append: file_name
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <x-icon
+    src="{{ url }}"
+    name="{{ name }}"
+  >
+  </x-icon>
+
+  <template data-island>
+    <script type="module">
+      import 'components/icon'
+    </script>
+  </template>
+</is-land>

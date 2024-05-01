@@ -1,0 +1,16 @@
+{%- comment -%}
+  Uses es-module-shims 1.8.2
+  https://github.com/guybedford/es-module-shims/releases/tag/1.8.2
+
+  Usage:
+  {% render 'es-module-shims' %}
+{%- endcomment -%}
+
+<script>
+  if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+    const el = document.createElement('script')
+    el.async = true
+    el.src = "{{ 'es-module-shims.min.js' | asset_url }}"
+    document.head.appendChild(el)
+  }
+</script>

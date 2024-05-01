@@ -1,0 +1,19 @@
+{%- comment -%}
+  Renders the SKU of a given variant
+
+  Accepts:
+  - variant {variant} - Variant object
+
+  Usage:
+  {% render 'variant-sku', variant: variant %}
+{%- endcomment -%}
+
+<variant-sku>
+  {%- if variant.sku != blank -%}
+    SKU: {{ variant.sku }}
+  {%- endif -%}
+</variant-sku>
+
+<script type="module">
+  import 'components/variant-sku'
+</script>

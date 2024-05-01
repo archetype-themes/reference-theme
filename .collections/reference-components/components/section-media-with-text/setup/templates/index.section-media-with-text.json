@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "media_with_text_1": {
+      "type": "media-with-text",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "media_crop": "portrait"
+          }
+        }
+      },
+      "block_order": ["image"],
+      "settings": {
+        "full_width": false,
+        "media_width": "33",
+        "layout": "left",
+        "content_alignment": "center",
+        "subheading": "Travel Essentials",
+        "heading": "Pack for adventure",
+        "heading_size": "h2",
+        "text": "<p>Your journey begins with the essentials. Our premium travel gear combines style and functionality to accompany you to any destination.</p>",
+        "button_text": "Organize in style",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "media_with_text_2": {
+      "type": "media-with-text",
+      "blocks": {
+        "video": {
+          "type": "video"
+        }
+      },
+      "block_order": ["video"],
+      "settings": {
+        "full_width": false,
+        "media_width": "66",
+        "content_alignment": "right",
+        "content_position": "bottom",
+        "heading": "Unearth wonders",
+        "heading_size": "h2",
+        "text": "<p>Explore the curated selection of innovations that bring the world closer to you. From the latest tech to timeless crafts, find your next extraordinary discovery.\"</p>",
+        "button_text": "Begin your journey",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_with_text_3": {
+      "type": "media-with-text",
+      "blocks": {
+        "video": {
+          "type": "video",
+          "settings": {
+            "external_video": "https://vimeo.com/823359582",
+            "media_crop": "landscape",
+            "autoplay": false,
+            "show_controls": true
+          }
+        }
+      },
+      "block_order": ["video"],
+      "settings": {
+        "full_width": false,
+        "media_width": "66",
+        "layout": "left",
+        "heading": "Little dragon",
+        "heading_size": "h2",
+        "text": "<p>To accompany this track we wanted to create a world where heat radiates off the screen—embodying that feeling of eating melty ice cream on a hot day. Something that once gave you relief and pleasure, now isn’t so great.</p>",
+        "button_text": "Watch movie",
+        "button_link": "https://vimeo.com/823359582"
+      }
+    },
+    "media_with_text_4": {
+      "type": "media-with-text",
+      "blocks": {
+        "video": {
+          "type": "video",
+          "settings": {
+            "external_video": "https://www.youtube.com/watch?v=xGRjCa49C6U"
+          }
+        }
+      },
+      "block_order": ["video"],
+      "settings": {
+        "full_width": false,
+        "heading": "Embrace paradise where dreams drift ashore",
+        "heading_size": "h2",
+        "text": "<p>Dive into our collection inspired by the sea's tranquility and the beach's bliss. Equip yourself for the perfect getaway or bring a piece of paradise into your daily life.</p>",
+        "button_text": "Find your bliss",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_with_text_5": {
+      "type": "media-with-text",
+      "blocks": {
+        "model": {
+          "type": "model",
+          "settings": {
+            "product": "cap-lamp"
+          }
+        }
+      },
+      "block_order": ["model"],
+      "settings": {
+        "full_width": false,
+        "layout": "left",
+        "subheading": "Next-gen products",
+        "heading": "Innovate <em>boldly</em>",
+        "heading_size": "h2",
+        "text": "<p>Step into the future with our collection of 3D models designed to inspire and excite. From the intricacies of a digital world to the sleek curves of modern aesthetics, find the perfect model to ignite your next project.</p>",
+        "button_text": "Explore models"
+      }
+    }
+  },
+  "order": ["media_with_text_1", "media_with_text_2", "media_with_text_3", "media_with_text_4", "media_with_text_5"]
+}

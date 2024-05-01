@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders an image
+
+  Accepts:
+  - image {image} - Image object
+  - media_crop {'16-9'|'portrait'|'landscape'|'square'} - Crop type of the media
+  - preload {Boolean} - Whether to preload the image
+{%- endcomment -%}
+
+{% liquid
+  assign image = image | default: block.settings.image
+  assign media_crop = media_crop | default: block.settings.media_crop | default: 'square'
+  assign preload = preload | default: false
+
+  assign loading = 'lazy'
+  assign fetchpriority = 'auto'
+
+  if preload
+    assign loading = 'eager'
+    assign fetchpriority = 'high'
+  endif
+%}
+
+<div class="block-image aspect-ratio--{{ media_crop }}" {{ block.shopify_attributes }}>
+  {%- if image != blank -%}
+    {%- liquid
+      echo image | image_url: width: 800 | image_tag: loading: loading, fetchpriority: fetchpriority, sizes: sizes
+    -%}
+  {%- else -%}
+    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+</div>

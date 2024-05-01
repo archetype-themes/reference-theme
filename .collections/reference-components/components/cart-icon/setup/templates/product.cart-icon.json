@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "cart_icon": {
+      "type": "cart-icon"
+    }
+  },
+  "order": ["cart_icon"]
+}
