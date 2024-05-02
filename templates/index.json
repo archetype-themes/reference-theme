@@ -4,12 +4,35 @@
       "type": "media-with-text",
       "blocks": {
         "video": {
-          "type": "video"
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/cosmos.mp4",
+            "external_video": "",
+            "media_crop": "square",
+            "autoplay": true,
+            "loop": true,
+            "show_controls": false,
+            "mute_video": true
+          }
         }
       },
       "block_order": [
         "video"
-      ]
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "50",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Media with text",
+        "heading_size": "h2",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
