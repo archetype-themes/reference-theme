@@ -27,9 +27,9 @@
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
     {{ content_for_header }}
-
-    <link type="text/css" href="{{ 'reference-components.css' | asset_url }}" rel="stylesheet">
-  </head>
+  <link type="text/css" href="{{ 'reference-components.css' | asset_url }}" rel="stylesheet">
+  <link type="text/css" href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
+</head>
 
   <body>
     {%- sections 'header-group' -%}
