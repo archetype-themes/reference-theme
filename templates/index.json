@@ -1,5 +1,38 @@
 {
   "sections": {
+    "media_with_text_ffrmU8": {
+      "type": "media-with-text",
+      "blocks": {
+        "video_7BHHHV": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/cosmos_c510e8d8-550c-4818-a38d-938c46462530.mp4",
+            "media_crop": "square",
+            "autoplay": true,
+            "loop": true,
+            "show_controls": false,
+            "mute_video": true
+          }
+        }
+      },
+      "block_order": [
+        "video_7BHHHV"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "66",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Media with text",
+        "heading_size": "h4",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-3"
+      }
+    },
     "media-with-text": {
       "type": "media-with-text",
       "blocks": {
@@ -33,43 +66,10 @@
         "button_link": "",
         "color_scheme": "scheme-1"
       }
-    },
-    "media_with_text_ffrmU8": {
-      "type": "media-with-text",
-      "blocks": {
-        "video_7BHHHV": {
-          "type": "video",
-          "settings": {
-            "video": "shopify:\/\/files\/videos\/cosmos.mp4",
-            "media_crop": "16-9",
-            "autoplay": true,
-            "loop": true,
-            "show_controls": false,
-            "mute_video": true
-          }
-        }
-      },
-      "block_order": [
-        "video_7BHHHV"
-      ],
-      "settings": {
-        "full_width": false,
-        "media_width": "66",
-        "layout": "right",
-        "content_alignment": "left",
-        "content_position": "center",
-        "subheading": "",
-        "heading": "Media with text",
-        "heading_size": "h4",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "color_scheme": "scheme-3"
-      }
     }
   },
   "order": [
-    "media-with-text",
-    "media_with_text_ffrmU8"
+    "media_with_text_ffrmU8",
+    "media-with-text"
   ]
 }
