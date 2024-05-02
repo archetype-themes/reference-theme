@@ -117,5 +117,16 @@
         "default": "dollar"
       }
     ]
+  },
+  {
+    "name": "t:labels.favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:labels.favicon_image",
+        "info": "t:info.scaled_to_32x32"
+      }
+    ]
   }
 ]
