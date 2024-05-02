@@ -36,63 +36,52 @@
     "name": "t:labels.colors",
     "settings": [
       {
-        "type": "color_scheme_group",
-        "id": "color_schemes",
-        "definition": [
-          {
-            "type": "color",
-            "id": "text",
-            "label": "Primary",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "background",
-            "label": "Secondary",
-            "default": "#FFFFFF"
-          }
-        ],
-        "role": {
-          "background": {
-            "solid": "background"
-          },
-          "text": "text",
-          "primary_button": "text",
-          "on_primary_button": "background",
-          "primary_button_border": "text",
-          "secondary_button": "background",
-          "on_secondary_button": "text",
-          "secondary_button_border": "text",
-          "icons": "text",
-          "links": "text"
-        }
-      }
-    ]
-  },
-  {
-    "name": "t:labels.colors",
-    "settings": [
-      {
         "type": "header",
-        "content": "t:labels.general"
+        "content": "t:labels.color_schemes.1"
       },
       {
         "type": "color",
-        "id": "color_body_bg",
-        "label": "t:labels.background",
+        "id": "color_scheme_1_bg",
+        "label": "t:labels.primary",
         "default": "#ffffff"
       },
       {
         "type": "color",
-        "id": "color_body_text",
-        "label": "t:labels.text",
-        "default": "#1c1d1d"
+        "id": "color_scheme_1_text",
+        "label": "t:labels.secondary",
+        "default": "#141811"
+      },
+      {
+        "type": "header",
+        "content": "t:labels.color_schemes.2"
       },
       {
         "type": "color",
-        "id": "color_borders",
-        "label": "t:labels.lines_and_borders",
-        "default": "#1c1d1d"
+        "id": "color_scheme_2_bg",
+        "label": "t:labels.primary",
+        "default": "#141811"
+      },
+      {
+        "type": "color",
+        "id": "color_scheme_2_text",
+        "label": "t:labels.secondary",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "t:labels.color_schemes.3"
+      },
+      {
+        "type": "color",
+        "id": "color_scheme_3_bg",
+        "label": "t:labels.primary",
+        "default": "#f3f5f1"
+      },
+      {
+        "type": "color",
+        "id": "color_scheme_3_text",
+        "label": "t:labels.secondary",
+        "default": "#141811"
       }
     ]
   },
@@ -115,7 +104,6 @@
         "type": "select",
         "id": "product_save_type",
         "label": "t:labels.savings_display_style",
-        "default": "dollar",
         "options": [
           {
             "value": "dollar",
@@ -125,7 +113,8 @@
             "value": "percent",
             "label": "t:labels.percent"
           }
-        ]
+        ],
+        "default": "dollar"
       }
     ]
   }

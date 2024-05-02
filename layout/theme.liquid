@@ -23,23 +23,12 @@
     {%- render 'font-faces' -%}
     {%- render 'css-variables' -%}
 
-    {%- style -%}
-      {%- for scheme in settings.color_schemes -%}
-        [data-color-scheme="{{ scheme.id }}"] {
-          --color-background: {{ scheme.settings.background.rgb }};
-          --color-foreground: {{ scheme.settings.text.rgb }};
-
-          background-color: rgb(var(--color-background));
-          color: rgb(var(--color-foreground));
-        }
-      {%- endfor -%}
-    {%- endstyle -%}
-
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 
     {{ content_for_header }}
-  <link type="text/css" href="{{ 'reference-components.css' | asset_url }}" rel="stylesheet">
-</head>
+
+    <link type="text/css" href="{{ 'reference-components.css' | asset_url }}" rel="stylesheet">
+  </head>
 
   <body>
     {%- sections 'header-group' -%}
