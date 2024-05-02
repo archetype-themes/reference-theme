@@ -5,12 +5,14 @@
   - image {image} - Image object
   - media_crop {'16-9'|'portrait'|'landscape'|'square'} - Crop type of the media
   - preload {Boolean} - Whether to preload the image
+  - sizes {string} - Sizes attribute for the image tag
 {%- endcomment -%}
 
 {% liquid
   assign image = image | default: block.settings.image
   assign media_crop = media_crop | default: block.settings.media_crop | default: 'square'
   assign preload = preload | default: false
+  assign sizes = sizes | default: '100vw'
 
   assign loading = 'lazy'
   assign fetchpriority = 'auto'

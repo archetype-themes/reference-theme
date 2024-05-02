@@ -1,0 +1,21 @@
+{%- comment -%}
+  Renders the favicon for the store. If blank, an empty favicon is set which bypasses the favicon.ico request.
+
+  Accepts:
+  - favicon {image}: The favicon image
+
+  Usage:
+  {% render 'favicon' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign favicon = favicon | default: settings.favicon
+-%}
+
+{%- if favicon != blank -%}
+  <link rel="icon" type="image/png" href="{{ favicon | image_url: width: 32, height: 32 }}">
+{%- else -%}
+  {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+  <link rel="icon" href="data:,">
+  {% comment %}theme-check-enable RemoteAsset{% endcomment %}
+{%- endif -%}
