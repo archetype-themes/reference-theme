@@ -4,7 +4,12 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu_link_list": "main-menu",
+        "menu_position": "logo_left_menu_left",
+        "cart_icon": "bag",
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
