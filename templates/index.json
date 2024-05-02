@@ -6,7 +6,7 @@
         "video": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cosmos.mp4",
+            "video": "shopify:\/\/files\/videos\/cosmos2.mp4",
             "external_video": "",
             "media_crop": "square",
             "autoplay": true,
