@@ -34,6 +34,35 @@
         "color_scheme": "scheme-1"
       }
     },
+    "media_with_text_nJAPCG": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_fw4zkX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame3.png",
+            "media_crop": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "image_fw4zkX"
+      ],
+      "settings": {
+        "full_width": true,
+        "media_width": "33",
+        "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Media with text",
+        "heading_size": "h2",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-1"
+      }
+    },
     "media-with-text": {
       "type": "media-with-text",
       "blocks": {
@@ -67,40 +96,11 @@
         "button_link": "",
         "color_scheme": "scheme-1"
       }
-    },
-    "media_with_text_nJAPCG": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_fw4zkX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame3.png",
-            "media_crop": "portrait"
-          }
-        }
-      },
-      "block_order": [
-        "image_fw4zkX"
-      ],
-      "settings": {
-        "full_width": false,
-        "media_width": "50",
-        "layout": "right",
-        "content_alignment": "left",
-        "content_position": "center",
-        "subheading": "",
-        "heading": "Media with text",
-        "heading_size": "h2",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "color_scheme": "scheme-1"
-      }
     }
   },
   "order": [
     "media_with_text_ffrmU8",
-    "media-with-text",
-    "media_with_text_nJAPCG"
+    "media_with_text_nJAPCG",
+    "media-with-text"
   ]
 }
