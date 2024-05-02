@@ -1,0 +1,56 @@
+{% comment %}
+  Header section
+
+  Accepts:
+  - slot_icons {string} - Slot for icons
+  - menu_link_list {string} - Link list to use for the main menu
+  - menu_position {'below'|'left'|'center'|''} - Position of the main menu (left, center, right)
+
+  Usage:
+  {% render 'section-header' %}
+{% endcomment %}
+
+{%- liquid
+  assign menu_link_list = menu_link_list | default: section.settings.menu_link_list | default: 'main-menu'
+  assign menu_position = menu_position | default: section.settings.menu_position | default: ''
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
+
+  assign main_menu = linklists[menu_link_list]
+-%}
+
+<div data-color-scheme="{{ color_scheme }}">
+  <div class="page-width">
+    <header class="main-header main-header--{{ menu_position | replace: '_', '-' }}">
+      {%- if request.page_type == 'index' -%}
+        <h1 class="main-header__logo">
+          <a href="{{ routes.root_url }}">
+            {{ shop.name }}
+          </a>
+        </h1>
+      {%- else -%}
+        <a href="{{ routes.root_url }}" class="main-header__logo">
+          {{ shop.name }}
+        </a>
+      {%- endif -%}
+
+      <div class="main-header__menu">
+        {%- for link in main_menu.links -%}
+          <a
+            href="{{ link.url }}"
+            class="main-header__menu-link {% if link.active %}main-header__menu-link--active{% endif %}"
+          >
+            {{ link.title }}
+          </a>
+        {%- endfor -%}
+      </div>
+
+      <div class="main-header__icons">
+        {%- if slot_icons != blank -%}
+          {{ slot_icons }}
+        {%- else -%}
+          {%- render 'cart-icon' -%}
+        {%- endif -%}
+      </div>
+    </header>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{%- comment -%}
+  Renders the language direction based on the iso code of the store's locale
+
+  Usage:
+    <html dir="{% render 'language-direction' %}">...</html>
+{%- endcomment -%}
+
+{% liquid
+  assign language_code = request.locale.iso_code | split: '-' | first
+
+  case language_code
+    when 'ae', 'ar', 'arc', 'bcc', 'bqi', 'ckb', 'dv', 'fa', 'glk', 'ha', 'he', 'kwh', 'ks', 'ku', 'mzn', 'nqo', 'pnb', 'ps', 'sd', 'ug', 'ur', 'yi'
+      echo 'rtl'
+    else
+      echo 'ltr'
+  endcase
+%}

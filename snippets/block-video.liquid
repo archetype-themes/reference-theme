@@ -1,0 +1,82 @@
+{%- comment -%}
+  Renders a video block element
+
+  Accepts:
+  - video {video} - Video object
+  - external_video {external_video} - External video object
+  - autoplay {boolean} - Autoplay the video
+  - loop {boolean} - Loop the video
+  - hide_controls {boolean} - Hide the video controls
+  - mute_video {boolean} - Mute the video
+  - media_crop {'16-9'|'portrait'|'landscape'|'square'} - Crop type of the media
+  - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
+
+  {% render 'block-video', block: block, autoplay: true %}
+{%- endcomment -%}
+
+{% liquid
+  assign video = video | default: block.settings.video
+  assign external_video = external_video | default: block.settings.external_video
+  assign autoplay = autoplay | default: block.settings.autoplay, allow_false: true
+  assign loop = loop | default: block.settings.loop, allow_false: true
+  assign show_controls = show_controls | default: block.settings.show_controls, allow_false: false
+  assign mute_video = mute_video | default: block.settings.mute_video, allow_false: true
+  assign media_crop = media_crop | default: block.settings.media_crop | default: '16-9'
+  assign hydration = hydration | default: 'on:visible'
+%}
+
+<is-land {{ hydration }}>
+  <div class="block-video aspect-ratio--{{ media_crop }}" {{ block.shopify_attributes }}>
+    {%- if video != blank -%}
+      <video-media
+        {% if autoplay %}
+          autoplay
+        {% endif %}
+      >
+        {{
+          video
+          | video_tag:
+            controls: show_controls,
+            playsinline: true,
+            muted: autoplay,
+            loop: autoplay,
+            preload: 'metadata',
+            image_size: '500x'
+        }}
+      </video-media>
+    {%- elsif external_video != blank -%}
+      <video-media
+        host="{{ external_video.type }}"
+        {% if autoplay %}
+          autoplay
+        {% endif %}
+      >
+        <template>
+          {%- if external_video.type == 'youtube' -%}
+            <iframe
+              src="https://www.youtube.com/embed/{{ external_video.id }}?playsinline=1&{% if autoplay %}autoplay=1&{% endif %}{% unless show_controls %}controls=0&{% endunless %}{% if mute_video %}mute=1&{% endif %}{% if loop %}loop=1&{% endif %}playlist={{ external_video.id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}"
+              allow="autoplay; encrypted-media"
+              allowfullscreen="allowfullscreen"
+            ></iframe>
+          {%- elsif external_video.type == 'vimeo' -%}
+            <iframe
+              src="https://player.vimeo.com/video/{{ external_video.id }}?autopause=1&{% if autoplay %}background=1&autoplay=1&{% endif %}{% if loop %}loop=1&{% endif %}{% if mute_video %}muted=1&{% endif %}transparent=0&responsive=1&portrait=0&title=0&byline=0"
+              allow="autoplay; encrypted-media;"
+              allowfullscreen="allowfullscreen"
+            ></iframe>
+          {%- endif -%}
+        </template>
+      </video-media>
+    {%- else -%}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+  {% if video != blank or external_video != blank %}
+    <template data-island>
+      <script type="module">
+        import 'components/block-video'
+      </script>
+    </template>
+  {% endif %}
+</is-land>
