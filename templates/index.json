@@ -8,7 +8,7 @@
           "settings": {
             "video": "shopify:\/\/files\/videos\/cosmos_c510e8d8-550c-4818-a38d-938c46462530.mp4",
             "external_video": "",
-            "media_crop": "square",
+            "media_crop": "portrait",
             "autoplay": true,
             "loop": true,
             "show_controls": false,
