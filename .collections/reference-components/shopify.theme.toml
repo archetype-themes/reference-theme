@@ -1,4 +1,0 @@
-[component]
-type = "collection"
-name = "Components"
-locales-path = "https://github.com/archetype-themes/locales.git"

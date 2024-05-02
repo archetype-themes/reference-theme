@@ -1,8 +1,0 @@
-{
-  "imports": {
-    "components/*": "components/**/*.js",
-    "@archetype-themes/custom-elements/*": "scripts/custom-elements/*.js",
-    "@archetype-themes/utils/*": "scripts/utils/*.js",
-    "@archetype-themes/vendors/*": "scripts/vendors/*.js"
-  }
-}
