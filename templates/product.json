@@ -50,7 +50,7 @@
         "image_dKeMMV": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame3_eb2e8e91-ccd8-460f-83f1-1127f6d4a94b.png",
+            "image": "shopify:\/\/shop_images\/Frame_8.png",
             "media_crop": "landscape"
           }
         }
@@ -60,7 +60,7 @@
       ],
       "settings": {
         "full_width": false,
-        "media_width": "66",
+        "media_width": "50",
         "layout": "right",
         "content_alignment": "left",
         "content_position": "center",
@@ -70,7 +70,7 @@
         "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
         "button_text": "",
         "button_link": "",
-        "color_scheme": ""
+        "color_scheme": "scheme-3"
       }
     }
   },
