@@ -4,6 +4,8 @@
     "color_body_bg": "#fff",
     "color_body_text": "#000000",
     "color_borders": "#d1c6c6",
+    "checkout_accent_color": "#495b51",
+    "checkout_button_color": "#495b51",
     "content_for_index": [
 
     ],
