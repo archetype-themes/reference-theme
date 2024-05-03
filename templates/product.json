@@ -4,19 +4,33 @@
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {
+            "vendor_enable": "{{ product.vendor }}",
+            "sku_enable": true
+          }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {
+          }
         },
         "variant_picker": {
-          "type": "variant_picker"
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {
+          }
         },
         "buy_buttons": {
-          "type": "buy_buttons"
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
         }
       },
       "block_order": [
@@ -25,10 +39,43 @@
         "variant_picker",
         "description",
         "buy_buttons"
-      ]
+      ],
+      "settings": {
+        "image_position": "left"
+      }
+    },
+    "media_with_text_nTRyNM": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_dKeMMV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame3_eb2e8e91-ccd8-460f-83f1-1127f6d4a94b.png",
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image_dKeMMV"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "66",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Media with text",
+        "heading_size": "h2",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "media_with_text_nTRyNM"
   ]
 }
