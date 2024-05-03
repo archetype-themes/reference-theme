@@ -34,6 +34,35 @@
         "color_scheme": "scheme-2"
       }
     },
+    "media_with_text_jrDPGh": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_dVteQE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame2.png",
+            "media_crop": "square"
+          }
+        }
+      },
+      "block_order": [
+        "image_dVteQE"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "33",
+        "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "Liquid is king",
+        "heading": "and it's not going anywhere",
+        "heading_size": "h1",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": ""
+      }
+    },
     "media_with_text_nJAPCG": {
       "type": "media-with-text",
       "blocks": {
@@ -129,6 +158,7 @@
   },
   "order": [
     "media_with_text_ffrmU8",
+    "media_with_text_jrDPGh",
     "media_with_text_nJAPCG",
     "media-with-text",
     "media_with_text_Gde46A"
