@@ -85,7 +85,7 @@
         "content_position": "center",
         "subheading": "",
         "heading": "Build Better, Faster, and Smarter",
-        "heading_size": "h1",
+        "heading_size": "h3",
         "text": "<p>Say goodbye to the fragmented development processes. Archetype Devkit offers well-scoped, reusable components and a matching Figma file to ensure seamless design handoffs. This means faster development cycles and more consistent, high-quality outcomes for every theme you create.<\/p>",
         "button_text": "Explore Devkit",
         "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
@@ -98,7 +98,7 @@
         "video": {
           "type": "video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cosmos2.mp4",
+            "video": "shopify:\/\/files\/videos\/cosmos2_50ca305e-e5d7-4419-9a43-26365b4333f0.mp4",
             "external_video": "",
             "media_crop": "square",
             "autoplay": true,
