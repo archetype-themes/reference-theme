@@ -40,7 +40,7 @@
         "image_xfjbYg": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_6_9813de4d-1257-40e4-8ef7-6c5a11468ace.png",
+            "image": "shopify:\/\/shop_images\/Frame_8.png",
             "media_crop": "landscape"
           }
         }
@@ -51,7 +51,7 @@
       "settings": {
         "full_width": false,
         "media_width": "33",
-        "layout": "right",
+        "layout": "left",
         "content_alignment": "left",
         "content_position": "center",
         "subheading": "",
