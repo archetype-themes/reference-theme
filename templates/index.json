@@ -100,7 +100,7 @@
           "settings": {
             "video": "shopify:\/\/files\/videos\/cosmos2.mp4",
             "external_video": "",
-            "media_crop": "square",
+            "media_crop": "portrait",
             "autoplay": true,
             "loop": true,
             "show_controls": false,
