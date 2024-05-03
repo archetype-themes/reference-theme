@@ -82,6 +82,7 @@
       "block_order": [
         "video"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "media_width": "50",
