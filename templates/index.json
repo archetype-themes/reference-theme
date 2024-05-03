@@ -20,11 +20,11 @@
         "video_7BHHHV"
       ],
       "settings": {
-        "full_width": false,
-        "media_width": "50",
+        "full_width": true,
+        "media_width": "66",
         "layout": "right",
         "content_alignment": "left",
-        "content_position": "bottom",
+        "content_position": "center",
         "subheading": "Devkit beta",
         "heading": "Modern, component-first theme building experience",
         "heading_size": "h1",
@@ -32,35 +32,6 @@
         "button_text": "",
         "button_link": "",
         "color_scheme": "scheme-2"
-      }
-    },
-    "media_with_text_nJAPCG": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_fw4zkX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame3.png",
-            "media_crop": "portrait"
-          }
-        }
-      },
-      "block_order": [
-        "image_fw4zkX"
-      ],
-      "settings": {
-        "full_width": true,
-        "media_width": "50",
-        "layout": "left",
-        "content_alignment": "left",
-        "content_position": "center",
-        "subheading": "",
-        "heading": "Build Better, Faster, and Smarter",
-        "heading_size": "h4",
-        "text": "<p>Say goodbye to the fragmented development processes. Archetype Devkit offers well-scoped, reusable components and a matching Figma file to ensure seamless design handoffs. This means faster development cycles and more consistent, high-quality outcomes for every theme you create.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "color_scheme": "scheme-1"
       }
     },
     "media_with_text_Gde46A": {
@@ -90,6 +61,35 @@
         "button_text": "",
         "button_link": "",
         "color_scheme": "scheme-2"
+      }
+    },
+    "media_with_text_nJAPCG": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_fw4zkX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame3.png",
+            "media_crop": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "image_fw4zkX"
+      ],
+      "settings": {
+        "full_width": true,
+        "media_width": "50",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Build Better, Faster, and Smarter",
+        "heading_size": "h4",
+        "text": "<p>Say goodbye to the fragmented development processes. Archetype Devkit offers well-scoped, reusable components and a matching Figma file to ensure seamless design handoffs. This means faster development cycles and more consistent, high-quality outcomes for every theme you create.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-1"
       }
     },
     "media-with-text": {
@@ -129,8 +129,8 @@
   },
   "order": [
     "media_with_text_ffrmU8",
-    "media_with_text_nJAPCG",
     "media_with_text_Gde46A",
+    "media_with_text_nJAPCG",
     "media-with-text"
   ]
 }
