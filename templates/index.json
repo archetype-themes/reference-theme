@@ -29,33 +29,28 @@
         "heading": "and it's not going anywhere",
         "heading_size": "h1",
         "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.<\/p>",
-        "button_text": "",
-        "button_link": "",
+        "button_text": "Explore Devkit",
+        "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
         "color_scheme": ""
       }
     },
     "media_with_text_ffrmU8": {
       "type": "media-with-text",
       "blocks": {
-        "video_7BHHHV": {
-          "type": "video",
+        "image_xfjbYg": {
+          "type": "image",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/cosmos.mp4",
-            "external_video": "",
-            "media_crop": "portrait",
-            "autoplay": true,
-            "loop": true,
-            "show_controls": false,
-            "mute_video": true
+            "image": "shopify:\/\/shop_images\/Frame_6_9813de4d-1257-40e4-8ef7-6c5a11468ace.png",
+            "media_crop": "landscape"
           }
         }
       },
       "block_order": [
-        "video_7BHHHV"
+        "image_xfjbYg"
       ],
       "settings": {
         "full_width": false,
-        "media_width": "66",
+        "media_width": "33",
         "layout": "right",
         "content_alignment": "left",
         "content_position": "center",
@@ -65,7 +60,7 @@
         "text": "<p>Available now on Github<\/p>",
         "button_text": "Explore Devkit",
         "button_link": "",
-        "color_scheme": "scheme-2"
+        "color_scheme": "scheme-1"
       }
     },
     "media_with_text_nJAPCG": {
