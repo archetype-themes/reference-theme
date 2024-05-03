@@ -48,6 +48,7 @@
       "block_order": [
         "image_fw4zkX"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "media_width": "66",
