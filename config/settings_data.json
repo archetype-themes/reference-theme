@@ -2,7 +2,7 @@
   "current": {
     "heading_font": "inter_n5",
     "color_body_bg": "#fff",
-    "color_body_text": "#000000",
+    "color_body_text": "#243324",
     "color_borders": "#d1c6c6",
     "checkout_accent_color": "#495b51",
     "checkout_button_color": "#495b51",
@@ -12,7 +12,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "text": "#000000",
+          "text": "#243324",
           "background": "#ffffff"
         }
       },
