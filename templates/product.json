@@ -65,11 +65,11 @@
         "content_alignment": "left",
         "content_position": "center",
         "subheading": "",
-        "heading": "Media with text",
+        "heading": "Discover Devkit",
         "heading_size": "h2",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-        "button_text": "",
-        "button_link": "",
+        "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.<\/p>",
+        "button_text": "Learn more",
+        "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
         "color_scheme": "scheme-3"
       }
     }
