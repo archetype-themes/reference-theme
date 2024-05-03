@@ -100,19 +100,16 @@
     "media_with_text_Gde46A": {
       "type": "media-with-text",
       "blocks": {
-        "video_qxciQW": {
-          "type": "video",
+        "image_ip3pDp": {
+          "type": "image",
           "settings": {
-            "media_crop": "16-9",
-            "autoplay": true,
-            "loop": true,
-            "show_controls": false,
-            "mute_video": true
+            "image": "shopify:\/\/shop_images\/Frame4.png",
+            "media_crop": "square"
           }
         }
       },
       "block_order": [
-        "video_qxciQW"
+        "image_ip3pDp"
       ],
       "settings": {
         "full_width": false,
