@@ -48,10 +48,9 @@
       "block_order": [
         "image_fw4zkX"
       ],
-      "disabled": true,
       "settings": {
         "full_width": true,
-        "media_width": "66",
+        "media_width": "33",
         "layout": "left",
         "content_alignment": "left",
         "content_position": "center",
@@ -83,7 +82,6 @@
       "block_order": [
         "video"
       ],
-      "disabled": true,
       "settings": {
         "full_width": false,
         "media_width": "50",
