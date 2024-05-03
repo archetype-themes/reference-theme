@@ -20,7 +20,7 @@
         "video_7BHHHV"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "media_width": "66",
         "layout": "right",
         "content_alignment": "left",
@@ -29,35 +29,6 @@
         "heading": "Modern, component-first theme building experience",
         "heading_size": "h1",
         "text": "<p>Available now on Github<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "color_scheme": "scheme-2"
-      }
-    },
-    "media_with_text_Gde46A": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_ip3pDp": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame4.png",
-            "media_crop": "portrait"
-          }
-        }
-      },
-      "block_order": [
-        "image_ip3pDp"
-      ],
-      "settings": {
-        "full_width": false,
-        "media_width": "50",
-        "layout": "right",
-        "content_alignment": "left",
-        "content_position": "center",
-        "subheading": "",
-        "heading": "Join a Community of Innovators",
-        "heading_size": "h4",
-        "text": "<p>The initial preview of Archetype Devkit is just the beginning. By joining our community, you contribute to shaping an open-source solution that addresses the real challenges of theme development. Share your insights, learn from peers, and help propel the Shopify ecosystem forward.<\/p>",
         "button_text": "",
         "button_link": "",
         "color_scheme": "scheme-2"
@@ -125,12 +96,41 @@
         "button_link": "",
         "color_scheme": "scheme-1"
       }
+    },
+    "media_with_text_Gde46A": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_ip3pDp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame4.png",
+            "media_crop": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "image_ip3pDp"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "50",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Join a Community of Innovators",
+        "heading_size": "h4",
+        "text": "<p>The initial preview of Archetype Devkit is just the beginning. By joining our community, you contribute to shaping an open-source solution that addresses the real challenges of theme development. Share your insights, learn from peers, and help propel the Shopify ecosystem forward.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-2"
+      }
     }
   },
   "order": [
     "media_with_text_ffrmU8",
-    "media_with_text_Gde46A",
     "media_with_text_nJAPCG",
-    "media-with-text"
+    "media-with-text",
+    "media_with_text_Gde46A"
   ]
 }
