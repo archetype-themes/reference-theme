@@ -1,4 +1,5 @@
 .button {
+  cursor: pointer;
   display: inline-flex;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -27,7 +28,18 @@
     border-radius: 4px;
     overflow: hidden;
     min-height: 57.7px;
+    border-radius: var(--radi-xs, 4px);
+    background: #141811;
   }
+.block-buy-buttons .shopify-payment-button__button:hover {
+      background-color: #000;
+    }
+.block-buy-buttons__submit {
+  background-color: transparent;
+  border-radius: var(--radi-xs, 4px);
+  border: 1px solid #141811;
+  color: #141811;
+}
 .block-buy-buttons__submit.button {
     width: 100%;
     justify-content: center;
@@ -955,6 +967,9 @@ table td {
   display: flex;
   flex-direction: column;
   gap: var(--size-6);
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
 @media only screen and (min-width: 769px) {
 .main-product__info {

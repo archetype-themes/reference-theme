@@ -12,7 +12,6 @@
 {%- liquid
   assign title_default = 'labels.example_product' | t
   assign title = product.title | default: title_default
-  assign current_variant = product.selected_or_first_available_variant
   assign vendor_enable = block.settings.vendor_enable
   assign sku_enable = block.settings.sku_enable
   assign collection_handle = vendor_enable | handleize
@@ -36,7 +35,7 @@
 
       {%- if sku_enable -%}
         <div class="block-title__sku">
-          {%- render 'variant-sku', variant: current_variant -%}
+          {%- render 'variant-sku' -%}
         </div>
       {%- endif -%}
     </div>
