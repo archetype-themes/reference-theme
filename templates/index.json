@@ -27,7 +27,7 @@
         "content_position": "center",
         "subheading": "Liquid is king",
         "heading": "and it's not going anywhere",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.<\/p>",
         "button_text": "Explore Devkit",
         "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
