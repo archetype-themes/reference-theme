@@ -377,6 +377,7 @@ h6 {
 .block-video {
   position: relative;
   height: 100%;
+  width: 100%;
 }
 video-media {
   display: block;
@@ -399,11 +400,10 @@ cart-count {
   display: block;
 }
 .cart-icon {
-  --size: 1.6875rem;
-
+  display: block;
   position: relative;
-  width: var(--size);
-  height: var(--size);
+  width: var(--size-6-5);
+  height: var(--size-6-5);
 }
 .cart-count {
   position: absolute;
@@ -657,6 +657,7 @@ input[type='search']::-webkit-search-decoration {
   }
 .rte img, .rte-setting img {
     height: auto;
+    max-width: 100%;
   }
 .rte a:not(.rte__image):not(.btn), .rte-setting a:not(.rte__image):not(.btn) {
     -webkit-text-decoration: underline;
@@ -728,6 +729,27 @@ body {
     width: 100%;
 }
   }
+[data-color-scheme='scheme-1'] {
+  --color-background: var(--color-scheme-1-bg);
+  --color-foreground: var(--color-scheme-1-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+[data-color-scheme='scheme-2'] {
+  --color-background: var(--color-scheme-2-bg);
+  --color-foreground: var(--color-scheme-2-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+[data-color-scheme='scheme-3'] {
+  --color-background: var(--color-scheme-3-bg);
+  --color-foreground: var(--color-scheme-3-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
 .main-header {
   display: grid;
   column-gap: var(--size-6);

@@ -60,6 +60,14 @@ export class VideoMedia extends BaseMedia {
       }
     })
 
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play()
+      } else {
+        video.pause()
+      }
+    })
+
     return video
   }
 

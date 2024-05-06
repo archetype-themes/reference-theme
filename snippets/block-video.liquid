@@ -11,6 +11,7 @@
   - media_crop {'16-9'|'portrait'|'landscape'|'square'} - Crop type of the media
   - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
 
+  Usage:
   {% render 'block-video', block: block, autoplay: true %}
 {%- endcomment -%}
 
@@ -23,10 +24,18 @@
   assign mute_video = mute_video | default: block.settings.mute_video, allow_false: true
   assign media_crop = media_crop | default: block.settings.media_crop | default: '16-9'
   assign hydration = hydration | default: 'on:visible'
+
+  if external_video != blank
+    assign external_video_host = external_video.host | default: external_video.type
+    assign external_video_id = external_video.external_id | default: external_video.id
+  endif
 %}
 
 <is-land {{ hydration }}>
-  <div class="block-video aspect-ratio--{{ media_crop }}" {{ block.shopify_attributes }}>
+  <div
+    class="block-video aspect-ratio--{{ media_crop }}"
+    {{ block.shopify_attributes }}
+  >
     {%- if video != blank -%}
       <video-media
         {% if autoplay %}
@@ -46,21 +55,21 @@
       </video-media>
     {%- elsif external_video != blank -%}
       <video-media
-        host="{{ external_video.type }}"
+        host="{{ external_video_host }}"
         {% if autoplay %}
           autoplay
         {% endif %}
       >
         <template>
-          {%- if external_video.type == 'youtube' -%}
+          {%- if external_video_host == 'youtube' -%}
             <iframe
-              src="https://www.youtube.com/embed/{{ external_video.id }}?playsinline=1&{% if autoplay %}autoplay=1&{% endif %}{% unless show_controls %}controls=0&{% endunless %}{% if mute_video %}mute=1&{% endif %}{% if loop %}loop=1&{% endif %}playlist={{ external_video.id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}"
+              src="https://www.youtube.com/embed/{{ external_video_id }}?playsinline=1&{% if autoplay %}autoplay=1&{% endif %}{% unless show_controls %}controls=0&{% endunless %}{% if mute_video %}mute=1&{% endif %}{% if loop %}loop=1&{% endif %}playlist={{ external_video_id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}"
               allow="autoplay; encrypted-media"
               allowfullscreen="allowfullscreen"
             ></iframe>
-          {%- elsif external_video.type == 'vimeo' -%}
+          {%- elsif external_video_host == 'vimeo' -%}
             <iframe
-              src="https://player.vimeo.com/video/{{ external_video.id }}?autopause=1&{% if autoplay %}background=1&autoplay=1&{% endif %}{% if loop %}loop=1&{% endif %}{% if mute_video %}muted=1&{% endif %}transparent=0&responsive=1&portrait=0&title=0&byline=0"
+              src="https://player.vimeo.com/video/{{ external_video_id }}?autopause=1&{% if autoplay %}autoplay=1&{% endif %}{% unless show_controls %}controls=0&{% endunless %}{% if loop %}loop=1&{% endif %}{% if mute_video %}muted=1&{% endif %}transparent=0&responsive=1&portrait=0&title=0&byline=0"
               allow="autoplay; encrypted-media;"
               allowfullscreen="allowfullscreen"
             ></iframe>
