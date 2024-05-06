@@ -8,6 +8,10 @@
   {% render 'variant-sku', variant: variant %}
 {%- endcomment -%}
 
+{%- liquid
+  assign variant = variant | default: product.selected_or_first_available_variant
+-%}
+
 <variant-sku>
   {%- if variant.sku != blank -%}
     SKU: {{ variant.sku }}
