@@ -31,35 +31,6 @@
         "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.<\/p>",
         "button_text": "Explore Devkit",
         "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
-        "color_scheme": "scheme-2"
-      }
-    },
-    "media_with_text_ffrmU8": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_xfjbYg": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_9.jpg",
-            "media_crop": "landscape"
-          }
-        }
-      },
-      "block_order": [
-        "image_xfjbYg"
-      ],
-      "settings": {
-        "full_width": false,
-        "media_width": "33",
-        "layout": "left",
-        "content_alignment": "left",
-        "content_position": "center",
-        "subheading": "",
-        "heading": "Modern, component-first theme building experience",
-        "heading_size": "h2",
-        "text": "",
-        "button_text": "",
-        "button_link": "",
         "color_scheme": "scheme-1"
       }
     },
@@ -90,6 +61,35 @@
         "button_text": "Explore Devkit",
         "button_link": "https:\/\/github.com\/archetype-themes\/devkit",
         "color_scheme": "scheme-2"
+      }
+    },
+    "media_with_text_ffrmU8": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_xfjbYg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_9.jpg",
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image_xfjbYg"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "33",
+        "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Modern, component-first theme building experience",
+        "heading_size": "h2",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-1"
       }
     },
     "media-with-text": {
@@ -158,8 +158,8 @@
   },
   "order": [
     "media_with_text_jrDPGh",
-    "media_with_text_ffrmU8",
     "media_with_text_nJAPCG",
+    "media_with_text_ffrmU8",
     "media-with-text",
     "media_with_text_Gde46A"
   ]
