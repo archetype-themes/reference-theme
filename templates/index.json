@@ -19,6 +19,9 @@
       "block_order": [
         "video_c4hzPb"
       ],
+      "custom_css": [
+        ".media-with-text,.media-with-text__media {padding-top: 0;}"
+      ],
       "settings": {
         "full_width": false,
         "media_width": "66",
