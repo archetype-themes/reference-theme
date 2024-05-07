@@ -26,11 +26,12 @@
 
 {% liquid
   assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
 %}
 
 <section
   class="main-product page-width page-width--flush-small"
-  data-color-scheme="scheme-3"
+  data-color-scheme="{{ color_scheme }}"
   data-image-position="{{ image_position }}"
 >
   <div class="main-product__media-gallery">
