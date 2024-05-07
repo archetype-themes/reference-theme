@@ -25,7 +25,11 @@
   %}
 {%- endcomment -%}
 
-<section data-color-scheme="scheme-3">
+{%- liquid
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
+-%}
+
+<section data-color-scheme="{{ color_scheme }}">
   <div class="page-width">
     {%- if cart.item_count == 0 -%}
       <div class="page-empty page-padding">
