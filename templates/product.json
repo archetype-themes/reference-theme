@@ -64,7 +64,7 @@
       "settings": {
         "full_width": true,
         "media_width": "33",
-        "layout": "left",
+        "layout": "right",
         "content_alignment": "left",
         "content_position": "center",
         "subheading": "",
