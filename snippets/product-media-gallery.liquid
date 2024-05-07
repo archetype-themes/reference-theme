@@ -16,15 +16,26 @@
 <product-media-gallery class="product-media-gallery">
   {%- for media in product.media -%}
     <div class="product-media-gallery__item">
-      {%- liquid
-        assign preload = false
+      <div class="media">
+        {%- liquid
+          assign preload = false
 
-        if default_media == media
-          assign preload = true
-        endif
+          if default_media == media
+            assign preload = true
+          endif
 
-        render 'media', media: media, sizes: sizes, preload: preload
-      -%}
+          case media.media_type
+            when 'image'
+              render 'block-image', image: media, preload: preload, sizes: sizes
+            when 'video'
+              render 'block-video', video: media, autoplay: true
+            when 'external_video'
+              render 'block-video', external_video: media, autoplay: true
+            when 'model'
+              render 'block-model', model: media, autoplay: true
+          endcase
+        -%}
+      </div>
     </div>
   {%- endfor -%}
 </product-media-gallery>

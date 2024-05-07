@@ -28,15 +28,16 @@
     border-radius: 4px;
     overflow: hidden;
     min-height: 57.7px;
-    border-radius: var(--radi-xs, 4px);
+    border-radius: var(--radius-xs, 4px);
     background: #141811;
+    font-size: var(--size-4-5);
   }
 .block-buy-buttons .shopify-payment-button__button:hover {
       background-color: #000;
     }
 .block-buy-buttons__submit {
   background-color: transparent;
-  border-radius: var(--radi-xs, 4px);
+  border-radius: var(--radius-xs, 4px);
   border: 1px solid #141811;
   color: #141811;
 }
@@ -741,6 +742,15 @@ body {
     width: 100%;
 }
   }
+.media {
+  width: 100%;
+  height: 100%;
+}
+.media__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 [data-color-scheme='scheme-1'] {
   --color-background: var(--color-scheme-1-bg);
   --color-foreground: var(--color-scheme-1-text);
