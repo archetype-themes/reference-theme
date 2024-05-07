@@ -40,6 +40,9 @@
         "description",
         "buy_buttons"
       ],
+      "custom_css": [
+        ".main-product {padding-top: 0;}"
+      ],
       "settings": {
         "image_position": "left"
       }
