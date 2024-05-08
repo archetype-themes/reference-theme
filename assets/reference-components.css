@@ -233,7 +233,6 @@ h6 {
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight);
   font-style: var(--heading-font-style);
-  overflow-wrap: anywhere;
 }
 .h1,
 .rte :where(h1) {
@@ -361,9 +360,13 @@ h6 {
   text-transform: uppercase;
 }
 .rich-text__text {
-  font-size: clamp(var(--size-3-5), 0.2692rem + 6.1538vw, var(--size-5));
-  line-height: clamp(var(--size-5-5), 0.2692rem + 6.1538vw, var(--size-8));
+  line-height: 1.5;
 }
+@media only screen and (max-width: 768px) {
+.rich-text__text {
+    font-size: var(--size-3-5);
+}
+  }
 .rich-text__text p {
   margin-top: 0;
 }
