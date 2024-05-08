@@ -4,6 +4,8 @@
   Accepts:
   - block {block} - Block object
   - product {product} - Product object
+  - sku_enable {boolean} - Show or hide the product sku
+  - vendor_enable {boolean} - Show or hide the vendor
 
   Usage:
   {% render 'block-title', block: block %}
@@ -12,11 +14,11 @@
 {%- liquid
   assign title_default = 'labels.example_product' | t
   assign title = product.title | default: title_default
-  assign vendor_enable = block.settings.vendor_enable
-  assign sku_enable = block.settings.sku_enable
-  assign collection_handle = vendor_enable | handleize
+  assign sku_enable = sku_enable | default: block.settings.sku_enable | default: false
+  assign vendor_enable = vendor_enable | default: block.settings.vendor_enable | default: false
+  assign collection_handle = product.vendor | handleize
   assign collection_for_vendor = collections[collection_handle]
-  assign vendor_url_default = vendor_enable | url_for_vendor
+  assign vendor_url_default = product.vendor | url_for_vendor
   assign vendor_url = collection_for_vendor.url | default: vendor_url_default
 -%}
 
@@ -27,9 +29,9 @@
 
   {%- if vendor_enable or sku_enable -%}
     <div>
-      {%- if vendor_enable != blank -%}
+      {%- if vendor_enable -%}
         <a class="block-title__vendor" href="{{ vendor_url }}">
-          {{- vendor_enable -}}
+          {{- product.vendor -}}
         </a>
       {%- endif -%}
 

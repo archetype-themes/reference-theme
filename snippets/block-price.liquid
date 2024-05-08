@@ -5,6 +5,8 @@
   - block {block} - Block object
   - product {product} - Product object
   - use_variant {boolean} - Whether to use the first available variant or the product itself
+  - product_save_amount {boolean} - Whether to show the saved amount
+  - product_save_type {'dollar'|'percent'} - Savings display style
 
   Usage:
   {% render 'block-price' block: block %}
@@ -21,8 +23,8 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign available = target.available | default: false
-  assign product_save_amount = settings.product_save_amount
-  assign product_save_type = settings.product_save_type
+  assign product_save_amount = product_save_amount | default: settings.product_save_amount, allow_false: true | default: true, allow_false: true
+  assign product_save_type = product_save_type | default: settings.product_save_type | default: 'dollar'
   assign saved_amount = target.compare_at_price | minus: target.price | times: 100.0 | divided_by: target.compare_at_price | round | append: '%'
 
   if product_save_type == 'dollar'
