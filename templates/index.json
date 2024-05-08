@@ -34,10 +34,7 @@
       },
       "block_order:": [
         "image"
-      ],
-      "settings": {
-        "full_width": true
-      }
+      ]
     },
     "media-with-text-3": {
       "type": "media-with-text",
