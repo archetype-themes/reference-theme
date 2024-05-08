@@ -6,7 +6,7 @@
         "video_c4hzPb": {
           "type": "video",
           "settings": {
-            "video": "",
+            "video": "shopify:\/\/files\/videos\/cosmos.mp4",
             "external_video": "",
             "media_crop": "portrait",
             "autoplay": true,
@@ -43,8 +43,8 @@
         "image_fw4zkX": {
           "type": "image",
           "settings": {
-            "image": "",
-            "media_crop": "portrait"
+            "image": "shopify:\/\/shop_images\/Frame_4.png",
+            "media_crop": "square"
           }
         }
       },
@@ -72,7 +72,7 @@
         "image_xfjbYg": {
           "type": "image",
           "settings": {
-            "image": "",
+            "image": "shopify:\/\/shop_images\/Frame_9.jpg",
             "media_crop": "landscape"
           }
         }
@@ -101,7 +101,6 @@
         "video": {
           "type": "video",
           "settings": {
-            "video": "",
             "external_video": "",
             "media_crop": "square",
             "autoplay": true,
@@ -135,7 +134,6 @@
         "image_ip3pDp": {
           "type": "image",
           "settings": {
-            "image": "",
             "media_crop": "portrait"
           }
         }
