@@ -28,7 +28,7 @@
         "type": "font_picker",
         "id": "body_font",
         "label": "t:labels.font",
-        "default": "inter_n4"
+        "default": "inter_n5"
       }
     ]
   },
@@ -43,7 +43,7 @@
         "type": "color",
         "id": "color_scheme_1_bg",
         "label": "t:labels.primary",
-        "default": "#ffffff"
+        "default": "#f4f4f4"
       },
       {
         "type": "color",
@@ -75,7 +75,7 @@
         "type": "color",
         "id": "color_scheme_3_bg",
         "label": "t:labels.primary",
-        "default": "#f3f5f1"
+        "default": "#ffffff"
       },
       {
         "type": "color",
