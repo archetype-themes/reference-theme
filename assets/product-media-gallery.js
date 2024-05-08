@@ -12,7 +12,7 @@ export class ProductMediaGallery extends HTMLElement {
   handleVariantChange({ detail }) {
     const { sectionId, variant } = detail
 
-    if (!variant) {
+    if (!variant || !variant.featured_media) {
       return
     }
 
