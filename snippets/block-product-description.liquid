@@ -13,6 +13,6 @@
   assign product = product | default: section.settings.product
 %}
 
-<div class="product-block" {{ block.shopify_attributes }}>
+<div {{ block.shopify_attributes }}>
   {%- render 'product-description', product: product -%}
 </div>
