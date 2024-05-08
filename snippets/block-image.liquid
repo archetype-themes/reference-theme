@@ -24,11 +24,11 @@
 %}
 
 <div class="block-image aspect-ratio--{{ media_crop }}" {{ block.shopify_attributes }}>
-  {%- if image != blank -%}
-    {%- liquid
+  {%- liquid
+    if image != blank
       echo image | image_url: width: 800 | image_tag: loading: loading, fetchpriority: fetchpriority, sizes: sizes
-    -%}
-  {%- else -%}
-    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg' }}
-  {%- endif -%}
+    else
+      echo 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg'
+    endif
+  -%}
 </div>

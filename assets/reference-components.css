@@ -8,7 +8,7 @@
   color: rgb(var(--color-background));
   -webkit-text-decoration: none;
   text-decoration: none;
-  font-size: 1.125rem;
+  font-size: var(--size-4);
   padding: var(--size-3) var(--size-6);
   border-radius: 4px;
 }
@@ -30,7 +30,7 @@
     min-height: 57.7px;
     border-radius: var(--radius-xs, 4px);
     background: #141811;
-    font-size: var(--size-4-5);
+    font-size: var(--size-4);
   }
 .block-buy-buttons .shopify-payment-button__button:hover {
       background-color: #000;
@@ -305,6 +305,9 @@ h6 {
   display: grid;
   gap: var(--size-2);
 }
+.block-price__label {
+  font-size: var(--size-3-5);
+}
 [data-on-sale] .block-price__regular {
     display: none;
   }
@@ -354,7 +357,7 @@ h6 {
   margin-bottom: 0;
 }
 .rich-text__subheading {
-  font-size: 1.25rem;
+  font-size: var(--size-3-5);
   text-transform: uppercase;
 }
 .rich-text__text {
@@ -382,6 +385,7 @@ h6 {
 .block-title__vendor {
   display: inline-block;
   margin-right: var(--size-5);
+  font-size: var(--size-3-5);
 }
 .block-variant-picker {
   display: grid;
@@ -474,7 +478,7 @@ x-icon {
   justify-items: start;
 }
 .line-item__title {
-  font-size: 1.125rem;
+  font-size: var(--size-4);
 }
 .line-item__variants {
   margin-top: var(--size-3);
@@ -892,7 +896,7 @@ table th {
   padding-bottom: var(--size-3);
 }
 table tbody td:last-child {
-  font-size: 1.125rem;
+  font-size: var(--size-4);
 }
 @media only screen and (max-width: 768px) {
 table tbody td:last-child {
@@ -973,7 +977,7 @@ table td {
   width: 100%;
 }
 .main-product__info {
-  padding: 0 var(--page-width-padding) var(--size-10);
+  padding: var(--size-7) 0;
   display: flex;
   flex-direction: column;
   gap: var(--size-6);
@@ -1129,10 +1133,11 @@ div:has(.placeholder-svg) {
     }
   }
 .variant-button {
-  --labelBottomMargin: 12px;
+  --label-bottom-margin: 12px;
+
   border: 0;
   padding: 0;
-  margin: 0 0 calc(var(--labelBottomMargin) * -1);
+  margin: 0 0 calc(var(--label-bottom-margin) * -1);
   position: relative;
 }
 .variant-button label {
@@ -1145,6 +1150,7 @@ div:has(.placeholder-svg) {
     margin: 0 var(--size-2) var(--size-3) 0;
     min-width: var(--size-10);
     box-shadow: 0 0 0 1px rgba(var(--color-foreground) / 0.2);
+    font-size: var(--size-4);
     border-radius: 1px;
     overflow: hidden;
   }
@@ -1152,7 +1158,7 @@ div:has(.placeholder-svg) {
       padding: 0;
     }
 [data-center-text='true'] .variant-button label {
-      margin: 0 4px var(--labelBottomMargin);
+      margin: 0 4px var(--label-bottom-margin);
     }
 .variant-button input[type='radio']:focus + label {
     box-shadow: 0 0 0 1px #1c1d1d;
@@ -1182,6 +1188,7 @@ div:has(.placeholder-svg) {
   display: block;
   margin-bottom: var(--size-2);
   cursor: default;
+  font-size: var(--size-3-5);
 }
 .select {
   position: relative;

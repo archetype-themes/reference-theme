@@ -15,7 +15,7 @@
 
 <product-media-gallery class="product-media-gallery">
   {%- for media in product.media -%}
-    <div class="product-media-gallery__item">
+    <div class="product-media-gallery__item" data-section-id="{{ section.id}}" data-media-id="{{ media.id }}">
       <div class="media">
         {%- liquid
           assign preload = false
@@ -39,3 +39,7 @@
     </div>
   {%- endfor -%}
 </product-media-gallery>
+
+<script type="module">
+  import 'components/product-media-gallery'
+</script>
