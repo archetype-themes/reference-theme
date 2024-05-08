@@ -10,7 +10,7 @@
   text-decoration: none;
   font-size: var(--size-4);
   padding: var(--size-3) var(--size-6);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
 }
 .block-buy-buttons {
   display: block;
@@ -25,10 +25,10 @@
     }
 .block-buy-buttons .shopify-payment-button__button {
     font: inherit;
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
     overflow: hidden;
-    min-height: 57.7px;
-    border-radius: var(--radius-xs, 4px);
+    min-height: var(--size-14);
+    border-radius: var(--radius-xs);
     background: #141811;
     font-size: var(--size-4);
   }
@@ -37,7 +37,7 @@
     }
 .block-buy-buttons__submit {
   background-color: transparent;
-  border-radius: var(--radius-xs, 4px);
+  border-radius: var(--radius-xs);
   border: 1px solid #141811;
   color: #141811;
 }
@@ -334,7 +334,7 @@ h6 {
   display: flex;
   gap: var(--size-2);
   margin: 0;
-  font-size: 20px;
+  font-size: var(--size-5);
 }
 .product-block {
   margin-bottom: 30px;
@@ -361,8 +361,8 @@ h6 {
   text-transform: uppercase;
 }
 .rich-text__text {
-  font-size: clamp(0.875rem, 0.2692rem + 6.1538vw, 1.25rem);
-  line-height: clamp(22px, 0.2692rem + 6.1538vw, 32px);
+  font-size: clamp(var(--size-3-5), 0.2692rem + 6.1538vw, var(--size-5));
+  line-height: clamp(var(--size-5-5), 0.2692rem + 6.1538vw, var(--size-8));
 }
 .rich-text__text p {
   margin-top: 0;
@@ -374,11 +374,11 @@ h6 {
   }
 .block-title__heading.h2 {
     margin-bottom: var(--size-2);
-    font-size: 24px;
+    font-size: var(--size-6);
   }
 @media only screen and (min-width: 769px) {
 .block-title__heading.h2 {
-      font-size: 32px;
+      font-size: var(--size-8);
   }
     }
 .block-title__sku,
@@ -389,7 +389,7 @@ h6 {
 }
 .block-variant-picker {
   display: grid;
-  gap: 25px;
+  gap: var(--size-6);
 }
 .block-video {
   position: relative;
@@ -506,7 +506,7 @@ x-icon {
     }
   }
 .line-item-quantity input {
-  width: 48px;
+  width: var(--size-12);
   padding-top: var(--size-2);
   padding-bottom: var(--size-2);
   text-align: center;
@@ -520,7 +520,7 @@ x-icon {
 }
 @media only screen and (max-width: 768px) {
     .line-item__quantity .line-item-quantity input {
-      width: 42px;
+      width: var(--size-10);
       padding-top: var(--size-1);
       padding-bottom: var(--size-1);
     }
@@ -602,14 +602,14 @@ input[type='search']::-webkit-search-decoration {
   .rte ul,
   .rte ol,
   .rte table {
-    margin-bottom: 15px;
+    margin-bottom: var(--size-3-5);
   }
 @media only screen and (min-width: 769px) {
 .rte p,
   .rte ul,
   .rte ol,
   .rte table {
-      margin-bottom: 25px;
+      margin-bottom: var(--size-6);
   }
     }
 .rte p:last-child, .rte ul:last-child, .rte ol:last-child, .rte table:last-child {
@@ -625,8 +625,8 @@ input[type='search']::-webkit-search-decoration {
   .rte h4,
   .rte h5,
   .rte h6 {
-    margin-top: 60px;
-    margin-bottom: 25px;
+    margin-top: var(--size-14);
+    margin-bottom: var(--size-6);
   }
 .rte h1:first-child, .rte h2:first-child, .rte h3:first-child, .rte h4:first-child, .rte h5:first-child, .rte h6:first-child {
       margin-top: 0;
@@ -658,11 +658,11 @@ input[type='search']::-webkit-search-decoration {
     table-layout: fixed;
   }
 .rte--block {
-  margin-bottom: 8px;
+  margin-bottom: var(--size-2);
 }
 @media only screen and (min-width: 769px) {
 .rte--block {
-    margin-bottom: 12px;
+    margin-bottom: var(--size-3);
 }
   }
 .rte-setting > p:last-child {
@@ -1101,7 +1101,7 @@ div:has(.placeholder-svg) {
 .media-with-text__text {
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: var(--size-7-5) var(--size-5);
 }
 @media only screen and (max-width: 768px) {
 .media-with-text__text {
@@ -1118,7 +1118,7 @@ div:has(.placeholder-svg) {
   }
 @media only screen and (min-width: 769px) {
 .media-with-text__text {
-    padding: 30px 60px;
+    padding: var(--size-7-5) var(--size-14);
 }
   }
 [data-media-layout='left'] .media-with-text__text {
@@ -1129,11 +1129,11 @@ div:has(.placeholder-svg) {
 }
 @media only screen and (max-width: 768px) {
     .media-with-text.page-width .media-with-text__media {
-      padding-top: 20px;
+      padding-top: var(--size-5);
     }
   }
 .variant-button {
-  --label-bottom-margin: 12px;
+  --label-bottom-margin: var(--size-3);
 
   border: 0;
   padding: 0;
