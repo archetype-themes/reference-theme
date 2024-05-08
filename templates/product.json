@@ -4,7 +4,11 @@
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {
+            "vendor_enable": true,
+            "sku_enable": true
+          }
         },
         "price": {
           "type": "price"
