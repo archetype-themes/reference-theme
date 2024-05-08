@@ -135,6 +135,7 @@
         "image_ip3pDp": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_7.png",
             "media_crop": "portrait"
           }
         }
