@@ -62,7 +62,7 @@
         "image_dKeMMV"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "media_width": "33",
         "layout": "right",
         "content_alignment": "left",

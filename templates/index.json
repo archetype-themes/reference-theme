@@ -52,7 +52,7 @@
         "image_fw4zkX"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "media_width": "50",
         "layout": "right",
         "content_alignment": "left",
