@@ -4,15 +4,104 @@
       "type": "media-with-text",
       "blocks": {
         "video": {
-          "type": "video"
+          "type": "video",
+          "settings": {
+            "media_crop": "portrait"
+          }
         }
       },
       "block_order": [
         "video"
+      ],
+      "custom_css": [
+        ".media-with-text,.media-with-text__media {padding-top: 0;}"
       ]
+    },
+    "settings": {
+      "media_width": "66",
+      "layout": "left",
+      "color_scheme": "scheme-1"
+    },
+    "media-with-text-2": {
+      "type": "media-with-text",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order:": [
+        "image"
+      ],
+      "settings": {
+        "full_width": true
+      }
+    },
+    "media-with-text-3": {
+      "type": "media-with-text",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image"
+      ],
+      "settings": {
+        "media_width": "33",
+        "layout": "left",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media-with-text-4": {
+      "type": "media-with-text",
+      "blocks": {
+        "video": {
+          "type": "video",
+          "settings": {
+            "media_crop": "square"
+          }
+        }
+      },
+      "block_order": [
+        "video"
+      ],
+      "settings": {
+        "full_width": true,
+        "media_width": "66",
+        "layout": "left",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "media-with-text-5": {
+      "type": "media-with-text",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "media_crop": "portrait"
+          }
+        }
+      },
+      "block_order": [
+        "image"
+      ],
+      "settings": {
+        "media_width": "33",
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
-    "media-with-text"
+    "media-with-text",
+    "media-with-text-2",
+    "media-with-text-3",
+    "media-with-text-4",
+    "media-with-text-5"
   ]
 }

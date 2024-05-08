@@ -25,10 +25,33 @@
         "variant_picker",
         "description",
         "buy_buttons"
+      ],
+      "custom_css": [
+        ".main-product {padding-top: 0;}"
       ]
+    },
+    "media-with-text": {
+      "type": "media-with-text",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image"
+      ],
+      "settings": {
+        "full_width": true,
+        "media_width": "33",
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "media-with-text"
   ]
 }
