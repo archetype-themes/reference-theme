@@ -15,12 +15,12 @@
       ],
       "custom_css": [
         ".media-with-text,.media-with-text__media {padding-top: 0;}"
-      ]
-    },
-    "settings": {
-      "media_width": "66",
-      "layout": "left",
-      "color_scheme": "scheme-1"
+      ],
+      "settings": {
+        "media_width": "66",
+        "layout": "left",
+        "color_scheme": "scheme-1"
+      }
     },
     "media-with-text-2": {
       "type": "media-with-text",
