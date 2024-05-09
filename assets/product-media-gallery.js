@@ -22,10 +22,12 @@ export class ProductMediaGallery extends HTMLElement {
       return
     }
 
-    window.scroll({
-      top: mediaContainer.offsetTop,
-      behavior: 'smooth'
-    })
+    const isMobile = window.matchMedia('screen and (max-width: 768px)').matches
+    const scrollOptions = isMobile
+      ? { left: mediaContainer.offsetLeft - (this.offsetWidth - mediaContainer.offsetWidth) / 2, behavior: 'smooth' }
+      : { top: mediaContainer.offsetTop, behavior: 'smooth' }
+      
+    isMobile ? this.scrollTo(scrollOptions) : window.scroll(scrollOptions)
   }
 }
 
