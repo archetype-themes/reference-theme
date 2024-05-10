@@ -1,5 +1,3 @@
 .gitignore
 README.md
 .theme-check.yml
-templates/
-config/
