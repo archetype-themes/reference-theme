@@ -1,0 +1,10 @@
+[
+  {
+    "name": "demo",
+    "main": "https://reference-theme.archetypethemes.co/?_ab=0&_fd=0&_sc=1&preview_theme_id=172265767225",
+    "develop": "https://reference-theme.archetypethemes.co/?_ab=0&_fd=0&_sc=1&preview_theme_id=172265799993",
+    "staging": "https://reference-theme.archetypethemes.co/?_ab=0&_fd=0&_sc=1&preview_theme_id=172265865529",
+    "production": "https://reference-theme.archetypethemes.co/?_ab=0&_fd=0&_sc=1&preview_theme_id=172265832761",
+    "admin": "https://admin.shopify.com/store/953b7d-83"
+  }
+]

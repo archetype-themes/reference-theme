@@ -1,0 +1,103 @@
+# Ensures that `main` and `*/main`, as well as `develop` and `*/develop`, always remain in sync, while persisting 
+# the stores theme editor customizations.
+#
+# Outcomes:
+# - Makes sure that there is always a preview of `main` and `develop` available on each store
+# - Allows you to easily QA `main` and `develop` on stores before creating a release
+# - Allows you to develop a feature and preview it in existing stores
+
+# Steps:
+# - Triggered on push to `main` or `develop`
+# - Merge changes from `main` into each `*/main` branch, or from `develop` into each `*/develop` branch
+# - Persist (don't change) the theme editor config files that already exist in `*/main` or `*/develop`, ie. `templates/*.json`, `sections/*.json`, `config/settings_data.json`
+# - If merge cannot be done automatically, a PR is opened so conflicts can be resolved
+#
+# Setup:
+# - Create the appropriate branches in the repo (*/main, */develop, */staging, */production)
+# - Add the contents of the `.github/STORE_CONFIG.json` as an repository variable named `STORE_CONFIG` (Settings > Secrets and variables > Actions > Repository variables)
+# - Create a simple Github App for authentication and set the `ARCHETYPE_GITHUB_APP_ID` and `ARCHETYPE_GITHUB_APP_KEY` as organization secrets (https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow)
+
+name: Merge main/develop to store/main/develop
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  merge_changes:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        store: ${{ fromJson(vars.STORE_CONFIG) }}
+    env:
+      THEME_EDITOR_FILE_GLOBS: "templates/*.json sections/*.json config/settings_data.json"
+
+    steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ARCHETYPE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.ARCHETYPE_GITHUB_APP_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Fetch branches
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set branch variable
+        id: set-branch
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "branch=main" >> $GITHUB_OUTPUT
+          else
+            echo "branch=develop" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Merge ${{ steps.set-branch.outputs.branch }} into ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}
+        id: merge
+        run: |
+          # Switch to ${matrix.store.name}/${branch} branch
+          git checkout ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}
+
+          # Merge branch into ${matrix.store.name}/${branch} without committing
+          git merge --no-commit origin/${{ steps.set-branch.outputs.branch }} || true
+
+          # Restore files from ${matrix.store.name}/${branch}
+          for FILE_GLOB in ${{ env.THEME_EDITOR_FILE_GLOBS }}; do
+            git checkout --ours $FILE_GLOB
+          done
+
+          # Stage changes
+          git add .
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            # Commit the changes
+            git commit -m "Merge ${{ steps.set-branch.outputs.branch }} into ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }} for specific directories, preserving .json files"
+            # Push the changes
+          fi
+          
+          git push origin ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}
+
+      - name: Open PR if merge or push fails
+        if: ${{ failure() }}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          commit-message: Merge ${{ steps.set-branch.outputs.branch }} into ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}
+          branch: auto-merge-${{ matrix.store.name }}-${{ steps.set-branch.outputs.branch }}
+          delete-branch: true
+          title: "Merge ${{ steps.set-branch.outputs.branch }} into ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}"
+          body: "This PR merges changes from `${{ steps.set-branch.outputs.branch }}` into `${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}` with specific theme editor configuration files preserved."
+          base: ${{ matrix.store.name }}/${{ steps.set-branch.outputs.branch }}
