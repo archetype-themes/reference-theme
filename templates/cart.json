@@ -4,20 +4,24 @@
       "type": "main-cart",
       "blocks": {
         "totals": {
-          "type": "totals"
+          "type": "totals",
+          "settings": {}
         },
         "note": {
-          "type": "note"
+          "type": "note",
+          "settings": {}
         },
         "checkout_button": {
-          "type": "checkout_button"
+          "type": "checkout_button",
+          "settings": {}
         }
       },
       "block_order": [
         "totals",
         "note",
         "checkout_button"
-      ]
+      ],
+      "settings": {}
     }
   },
   "order": [
