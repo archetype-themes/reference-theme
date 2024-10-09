@@ -1,67 +1,113 @@
 {
   "sections": {
+    "media_with_text_jrDPGh": {
+      "type": "media-with-text",
+      "blocks": {
+        "video_c4hzPb": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/cosmos.mp4",
+            "external_video": "",
+            "media_crop": "portrait",
+            "autoplay": true,
+            "loop": true,
+            "show_controls": false,
+            "mute_video": true
+          }
+        }
+      },
+      "block_order": [
+        "video_c4hzPb"
+      ],
+      "custom_css": [
+        ".media-with-text,.media-with-text__media {padding-top: 0;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "66",
+        "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "Liquid is king",
+        "heading": "and it's not going anywhere",
+        "heading_size": "h2",
+        "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.</p>",
+        "button_text": "Explore Devkit",
+        "button_link": "https://github.com/archetype-themes/devkit",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "media_with_text_nJAPCG": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_fw4zkX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_4.png",
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image_fw4zkX"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "50",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Build Better, Faster, and Smarter",
+        "heading_size": "h3",
+        "text": "<p>Say goodbye to the fragmented development processes. Archetype Devkit offers well-scoped, reusable components and a matching Figma file to ensure seamless design handoffs. This means faster development cycles and more consistent, high-quality outcomes for every theme you create.</p>",
+        "button_text": "Explore Devkit",
+        "button_link": "https://github.com/archetype-themes/devkit",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "media_with_text_ffrmU8": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_xfjbYg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_9.jpg",
+            "media_crop": "landscape"
+          }
+        }
+      },
+      "block_order": [
+        "image_xfjbYg"
+      ],
+      "settings": {
+        "full_width": false,
+        "media_width": "33",
+        "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Modern, component-first theme building experience",
+        "heading_size": "h2",
+        "text": "",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "scheme-1"
+      }
+    },
     "media-with-text": {
       "type": "media-with-text",
       "blocks": {
         "video": {
           "type": "video",
           "settings": {
-            "media_crop": "portrait"
-          }
-        }
-      },
-      "block_order": [
-        "video"
-      ],
-      "custom_css": [
-        ".media-with-text,.media-with-text__media {padding-top: 0;}"
-      ],
-      "settings": {
-        "media_width": "66",
-        "layout": "left",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "media-with-text-2": {
-      "type": "media-with-text",
-      "blocks": {
-        "image": {
-          "type": "image",
-          "settings": {
-            "media_crop": "landscape"
-          }
-        }
-      },
-      "block_order:": [
-        "image"
-      ]
-    },
-    "media-with-text-3": {
-      "type": "media-with-text",
-      "blocks": {
-        "image": {
-          "type": "image",
-          "settings": {
-            "media_crop": "landscape"
-          }
-        }
-      },
-      "block_order": [
-        "image"
-      ],
-      "settings": {
-        "media_width": "33",
-        "layout": "left",
-        "color_scheme": "scheme-1"
-      }
-    },
-    "media-with-text-4": {
-      "type": "media-with-text",
-      "blocks": {
-        "video": {
-          "type": "video",
-          "settings": {
-            "media_crop": "square"
+            "video": "shopify://files/videos/cosmos2.mp4",
+            "external_video": "",
+            "media_crop": "square",
+            "autoplay": true,
+            "loop": true,
+            "show_controls": false,
+            "mute_video": true
           }
         }
       },
@@ -72,33 +118,52 @@
         "full_width": true,
         "media_width": "66",
         "layout": "left",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Save Time and Resources",
+        "heading_size": "h3",
+        "text": "<p>Archetype Devkit eliminates the need to build from scratch, saving you time and money. With our sophisticated tooling, you can focus on innovation rather than reinventing the wheel. Streamline your development process and allocate resources more effectively with Devkit.</p>",
+        "button_text": "",
+        "button_link": "",
         "color_scheme": "scheme-3"
       }
     },
-    "media-with-text-5": {
+    "media_with_text_Gde46A": {
       "type": "media-with-text",
       "blocks": {
-        "image": {
+        "image_ip3pDp": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Frame_7.png",
             "media_crop": "portrait"
           }
         }
       },
       "block_order": [
-        "image"
+        "image_ip3pDp"
       ],
       "settings": {
+        "full_width": false,
         "media_width": "33",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Join a Community of Innovators",
+        "heading_size": "h4",
+        "text": "<p>The initial preview of Archetype Devkit is just the beginning. By joining our community, you contribute to shaping an open-source solution that addresses the real challenges of theme development. Share your insights, learn from peers, and help propel the Shopify ecosystem forward.</p>",
+        "button_text": "Join the community",
+        "button_link": "https://github.com/archetype-themes/devkit",
         "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
+    "media_with_text_jrDPGh",
+    "media_with_text_nJAPCG",
+    "media_with_text_ffrmU8",
     "media-with-text",
-    "media-with-text-2",
-    "media-with-text-3",
-    "media-with-text-4",
-    "media-with-text-5"
+    "media_with_text_Gde46A"
   ]
 }

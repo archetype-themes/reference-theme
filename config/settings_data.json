@@ -1,1 +1,11 @@
-{}
+{
+  "current": {
+    "heading_font": "inter_n5",
+    "color_scheme_1_bg": "#f4f4f4",
+    "color_scheme_2_bg": "#141811",
+    "color_scheme_2_text": "#ffffff",
+    "color_scheme_3_bg": "#fff",
+    "checkout_sidebar_background_color": "#f4f4f4",
+    "content_for_index": []
+  }
+}

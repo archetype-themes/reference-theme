@@ -6,21 +6,29 @@
         "title": {
           "type": "title",
           "settings": {
-            "vendor_enable": true,
+            "vendor_enable": "{{ product.vendor }}",
             "sku_enable": true
           }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
         },
         "variant_picker": {
-          "type": "variant_picker"
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {}
         },
         "buy_buttons": {
-          "type": "buy_buttons"
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
         }
       },
       "block_order": [
@@ -32,29 +40,43 @@
       ],
       "custom_css": [
         ".main-product {padding-top: 0;}"
-      ]
+      ],
+      "settings": {
+        "image_position": "left"
+      }
     },
-    "media-with-text": {
+    "media_with_text_nTRyNM": {
       "type": "media-with-text",
       "blocks": {
-        "image": {
+        "image_dKeMMV": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Frame_9.jpg",
             "media_crop": "landscape"
           }
         }
       },
       "block_order": [
-        "image"
+        "image_dKeMMV"
       ],
       "settings": {
+        "full_width": false,
         "media_width": "33",
+        "layout": "right",
+        "content_alignment": "left",
+        "content_position": "center",
+        "subheading": "",
+        "heading": "Discover Devkit",
+        "heading_size": "h4",
+        "text": "<p>Dive into the world of Shopify theme development with Archetype Devkit! Our open-source, component-first approach streamlines the design and development process, allowing you to maintain and expand your theme catalog efficiently. Utilize the same tools and workflows that have helped thousands of Shopify stores succeed.</p>",
+        "button_text": "Learn more",
+        "button_link": "https://github.com/archetype-themes/devkit",
         "color_scheme": "scheme-1"
       }
     }
   },
   "order": [
     "main",
-    "media-with-text"
+    "media_with_text_nTRyNM"
   ]
 }
