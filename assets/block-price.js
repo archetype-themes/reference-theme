@@ -1,4 +1,4 @@
-import { EVENTS, subscribe } from '@archetype-themes/utils/pubsub'
+import { EVENTS, subscribe } from 'pubsub'
 
 class BlockPrice extends HTMLElement {
   connectedCallback() {

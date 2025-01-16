@@ -11,8 +11,13 @@
   {% render 'block-title', block: block %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'block-title.component.css' %}
+
 {%- liquid
-  assign title_default = 'labels.example_product' | t
+  capture title_default
+    render 't-with-fallback', key: 'labels.example_product', fallback: 'Example product'
+  endcapture
+
   assign title = product.title | default: title_default
   assign sku_enable = sku_enable | default: block.settings.sku_enable | default: false
   assign vendor_enable = vendor_enable | default: block.settings.vendor_enable | default: false

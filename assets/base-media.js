@@ -1,4 +1,4 @@
-import inView from '@archetype-themes/vendors/in-view'
+import inView from 'in-view'
 
 export default class extends HTMLElement {
   constructor() {

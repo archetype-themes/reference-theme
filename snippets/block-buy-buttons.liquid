@@ -9,6 +9,8 @@
   {% render 'block-buy-buttons', block: block %}
 {% endcomment %}
 
+{% render 'stylesheet', name: 'block-buy-buttons.component.css' %}
+
 {%- liquid
   assign form_id = 'product-form-' | append: section.id
 
@@ -27,11 +29,6 @@
 
   if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
     assign quantity_rule_soldout = true
-  endif
-
-  assign button_text = 'actions.add_to_cart' | t
-  if product.selected_or_first_available_variant.available == false or quantity_rule_soldout
-    assign button_text = 'info.sold_out' | t
   endif
 -%}
 
@@ -67,7 +64,25 @@
         {% endif %}
       >
         <span>
-          {{- button_text -}}
+          {%- liquid
+            capture button_text
+              render 't-with-fallback', key: 'actions.add_to_cart', fallback: 'Add to cart fallback'
+            endcapture
+
+            if template contains 'preorder'
+              capture button_text
+                render 't-with-fallback', key: 'actions.preorder', fallback: 'Pre-order'
+              endcapture
+            endif
+
+            if product.selected_or_first_available_variant.available == false or quantity_rule_soldout
+              capture button_text
+                render 't-with-fallback', key: 'info.sold_out', fallback: 'Sold out'
+              endcapture
+            endif
+
+            echo button_text
+          -%}
         </span>
       </button>
 
@@ -79,9 +94,9 @@
 
   <script type="application/json">
     {
-      "addToCart": "{{ 'actions.add_to_cart' | t }}",
-      "soldOut": "{{ 'info.sold_out' | t }}",
-      "unavailable": "{{ 'info.unavailable' | t }}"
+      "addToCart": {% render 't-with-fallback', key: 'actions.add_to_cart', fallback: 'Add to cart', as_json: true %},
+      "solout": {% render 't-with-fallback', key: 'info.sold_out', fallback: 'Sold out', as_json: true %},
+      "unavailable": {% render 't-with-fallback', key: 'info.unavailable', fallback: 'Unavailable', as_json: true %}
     }
   </script>
 </block-buy-buttons>

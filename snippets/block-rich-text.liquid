@@ -13,6 +13,8 @@
   {% render 'block-rich-text', heading: 'Hello world' %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'block-rich-text.component.css' %}
+
 {% liquid
   assign subheading = subheading | default: section.settings.subheading
   assign heading = heading | default: section.settings.heading

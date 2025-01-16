@@ -8,6 +8,8 @@
   - sizes {string} - Sizes attribute for the image tag
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'block-image.component.css' %}
+
 {% liquid
   assign image = image | default: block.settings.image
   assign media_crop = media_crop | default: block.settings.media_crop | default: 'square'

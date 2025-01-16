@@ -8,6 +8,8 @@
   {% render 'cart-status-notifier' %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'cart-status-notifier.component.css' %}
+
 {%- liquid
   assign hydration = hydration | default: 'on:visible'
 -%}

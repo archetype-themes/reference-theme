@@ -12,6 +12,8 @@
   {% render 'block-model', block: block %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'block-model.component.css' %}
+
 {% liquid
   assign product = block.settings.product | default: product
   assign media = media | default: product.media | where: 'media_type', 'model' | first

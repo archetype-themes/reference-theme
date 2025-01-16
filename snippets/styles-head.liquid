@@ -1,0 +1,24 @@
+{% render 'stylesheet', name: 'variables.css', inline: true %}
+
+{% comment %} Base styles {% endcomment %}
+{% render 'stylesheet', name: 'base.css', inline: true %}
+{% render 'stylesheet', name: 'normalize.css', inline: true %}
+{% render 'stylesheet', name: 'typography.css', inline: true %}
+{% render 'stylesheet', name: 'color-schemes.css', inline: true %}
+
+{% comment %} Utility styles {% endcomment %}
+{% render 'stylesheet', name: 'aspect-ratio.css', inline: true %}
+{% render 'stylesheet', name: 'position.css', inline: true %}
+{% render 'stylesheet', name: 'page-width.css', inline: true %}
+{% render 'stylesheet', name: 'table.css', inline: true %}
+{% render 'stylesheet', name: 'visibility.css', inline: true %}
+{% render 'stylesheet', name: 'display.css', async: true %}
+{% render 'stylesheet', name: 'clearfix.css', async: true %}
+
+{% comment %} Components (TODO: Refactor to components) {% endcomment %}
+{% render 'stylesheet', name: 'placeholder-svg.css', inline: true %}
+{% render 'stylesheet', name: 'model-viewer.css', inline: true %}
+{% render 'stylesheet', name: 'button.css', inline: true %}
+{% render 'stylesheet', name: 'select.css', inline: true %}
+{% render 'stylesheet', name: 'rte.css', inline: true %}
+{% render 'stylesheet', name: 'model-viewer.css', async: true %}

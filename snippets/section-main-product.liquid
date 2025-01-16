@@ -24,6 +24,8 @@
   %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'section-main-product.component.css' %}
+
 {% liquid
   assign image_position = image_position | default: section.settings.image_position | default: 'left'
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'scheme-1'

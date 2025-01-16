@@ -6,9 +6,11 @@
   - directory {string} - Directory of the icon (optional)
   - prepend {boolean} - Prepends the icon name with a string (optional)
   - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
+  - eager {boolean} - Enables/disables eager loading if wrapped by <is-land> element (optional)
 
   Usage:
   {% render 'icon', name: 'alert' %}
+  {% render 'icon', name: 'alert', eager: true %}
 {% endcomment %}
 
 {%- liquid
@@ -33,10 +35,12 @@
 
 <is-land {{ hydration }}>
   <x-icon
+    {% if eager %}
+      defer-hydration
+    {% endif %}
     src="{{ url }}"
     name="{{ name }}"
-  >
-  </x-icon>
+  ></x-icon>
 
   <template data-island>
     <script type="module">

@@ -1,0 +1,29 @@
+.line-item__image {
+  position: relative;
+  width: 100px;
+  height: auto;
+}
+
+.line-item {
+  display: flex;
+  gap: var(--size-8);
+  align-items: start;
+
+  @media only screen and (min-width: 769px) {
+    align-items: center;
+  }
+}
+
+.line-item__info {
+  display: grid;
+  justify-items: start;
+}
+
+.line-item__title {
+  font-size: var(--size-4);
+}
+
+.line-item__variants {
+  margin-top: var(--size-3);
+  font-size: 0.75rem;
+}

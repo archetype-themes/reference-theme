@@ -1,4 +1,4 @@
-import { EVENTS, publish } from '@archetype-themes/utils/pubsub'
+import { EVENTS, publish } from 'pubsub'
 
 class BlockVariantPicker extends HTMLElement {
   connectedCallback() {

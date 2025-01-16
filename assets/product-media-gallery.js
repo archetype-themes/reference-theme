@@ -1,4 +1,4 @@
-import { EVENTS, subscribe } from '@archetype-themes/utils/pubsub'
+import { EVENTS, subscribe } from 'pubsub'
 
 export class ProductMediaGallery extends HTMLElement {
   connectedCallback() {
@@ -16,7 +16,9 @@ export class ProductMediaGallery extends HTMLElement {
       return
     }
 
-    const mediaContainer = this.querySelector(`[data-section-id="${sectionId}"][data-media-id="${variant.featured_media.id}"]`)
+    const mediaContainer = this.querySelector(
+      `[data-section-id="${sectionId}"][data-media-id="${variant.featured_media.id}"]`
+    )
 
     if (!mediaContainer) {
       return
@@ -26,7 +28,7 @@ export class ProductMediaGallery extends HTMLElement {
     const scrollOptions = isMobile
       ? { left: mediaContainer.offsetLeft - (this.offsetWidth - mediaContainer.offsetWidth) / 2, behavior: 'smooth' }
       : { top: mediaContainer.offsetTop, behavior: 'smooth' }
-      
+
     isMobile ? this.scrollTo(scrollOptions) : window.scroll(scrollOptions)
   }
 }

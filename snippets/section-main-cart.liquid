@@ -25,6 +25,8 @@
   %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'section-main-cart.component.css' %}
+
 {%- liquid
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
 -%}
@@ -33,25 +35,29 @@
   <div class="page-width">
     {%- if cart.item_count == 0 -%}
       <div class="page-empty page-padding">
-        <h1 class="text-3xl">{{ 'labels.cart' | t }}</h1>
-        {{ 'info.cart_empty' | t }}
+        <h1 class="text-3xl">
+          {% render 't-with-fallback', key: 'labels.cart', fallback: 'Cart' -%}
+        </h1>
+        {% render 't-with-fallback', key: 'info.cart_empty', fallback: 'Your cart is currently empty.' %}
 
         <a href="{{ routes.root_url }}" class="button">
-          {{ 'actions.continue_shopping' | t }}
+          {% render 't-with-fallback', key: 'actions.continue_shopping', fallback: 'Continue shopping' -%}
         </a>
       </div>
     {%- else -%}
       <div class="page-padding text-center">
-        <h1 class="text-3xl">{{ 'labels.cart' | t }}</h1>
+        <h1 class="text-3xl">
+          {% render 't-with-fallback', key: 'labels.cart', fallback: 'Cart' -%}
+        </h1>
       </div>
 
       <div class="main-cart">
         <table>
           <thead>
             <tr>
-              <th>{{ 'labels.product' | t }}</th>
-              <th>{{ 'labels.quantity' | t }}</th>
-              <th>{{ 'labels.total' | t }}</th>
+              <th>{% render 't-with-fallback', key: 'labels.product', fallback: 'Product' %}</th>
+              <th>{% render 't-with-fallback', key: 'labels.quantity', fallback: 'Quantity' %}</th>
+              <th>{% render 't-with-fallback', key: 'labels.total', fallback: 'Total' %}</th>
             </tr>
           </thead>
 

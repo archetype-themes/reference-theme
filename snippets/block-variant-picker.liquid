@@ -10,6 +10,8 @@
   {% render 'block-variant-picker', block: block %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'block-variant-picker.component.css' %}
+
 {%- liquid
   assign update_url = update_url | default: true, allow_false: true
 -%}

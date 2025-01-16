@@ -1,0 +1,33 @@
+{% comment %}
+  Renders a translation with a fallback if the translation is missing.
+  Currently, the 't' filter can't set a default value.
+
+  Accepts:
+  - key {string} - The translation key
+  - t {string} - The contents of the already translated key
+  - fallback {string} - The fallback translation
+  - as_json {boolean} - Whether to return the translation as JSON
+
+  Usage:
+  {% render 't-with-fallback', t: 'actions.add_to_cart', fallback: 'Add to cart' %}
+{% endcomment %}
+
+{% liquid
+  assign output = ''
+
+  if key != blank
+    assign output = key | t
+  else
+    assign output = t
+  endif
+
+  if output contains 'Translation missing:'
+    assign output = fallback
+  endif
+
+  if as_json
+    assign output = output | json
+  endif
+
+  echo output
+%}

@@ -1,0 +1,66 @@
+.variant-button {
+  --label-bottom-margin: var(--size-3);
+
+  border: 0;
+  padding: 0;
+  margin: 0 0 calc(var(--label-bottom-margin) * -1);
+  position: relative;
+
+  label {
+    font: inherit;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    font-weight: normal;
+    padding: var(--size-2) var(--size-3);
+    margin: 0 var(--size-2) var(--size-3) 0;
+    min-width: var(--size-10);
+    box-shadow: 0 0 0 1px rgba(var(--color-foreground) / 0.2);
+    font-size: var(--size-4);
+    border-radius: 1px;
+    overflow: hidden;
+
+    &.color-swatch {
+      padding: 0;
+    }
+
+    [data-center-text='true'] & {
+      margin: 0 4px var(--label-bottom-margin);
+    }
+  }
+
+  input[type='radio']:focus + label {
+    box-shadow: 0 0 0 1px #1c1d1d;
+    outline: 2px auto Highlight;
+    outline: 2px auto -webkit-focus-ring-color;
+    outline-offset: 1px;
+  }
+
+  input[type='radio']:checked + label {
+    box-shadow: 0 0 0 2px #1c1d1d;
+  }
+
+  input[type='radio'][data-disabled] + label,
+  input[type='checkbox'][data-disabled] + label {
+    color: rgba(var(--color-foreground) / 0.2);
+
+    &:after {
+      position: absolute;
+      content: '';
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      border-left: 2px solid;
+      border-color: rgba(var(--color-foreground) / 0.2);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.variant-button__label {
+  padding: 0;
+  display: block;
+  margin-bottom: var(--size-2);
+  cursor: default;
+  font-size: var(--size-3-5);
+}

@@ -1,0 +1,42 @@
+.block-buy-buttons {
+  display: block;
+
+  .shopify-payment-button {
+    margin-top: var(--size-3);
+
+    @media only screen and (min-width: 769px) {
+      margin-top: var(--size-5);
+    }
+  }
+
+  .shopify-payment-button__button {
+    font: inherit;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    min-height: var(--size-14);
+    border-radius: var(--radius-xs);
+    background: #141811;
+    font-size: var(--size-4);
+
+    &:hover {
+      background-color: #000;
+    }
+  }
+}
+
+.block-buy-buttons__submit {
+  background-color: transparent;
+  border-radius: var(--radius-xs);
+  border: 1px solid #141811;
+  color: #141811;
+
+  &.button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.block-buy-buttons__submit[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

@@ -8,6 +8,8 @@
   {% render 'icon', name: 'bag' %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'cart-icon.component.css' %}
+
 {%- liquid
   if section.settings.cart_icon != blank
     assign name = section.settings.cart_icon
@@ -18,7 +20,7 @@
 
 <is-land on:idle>
   <a href="{{ routes.cart_url }}" class="cart-icon">
-    {%- render 'icon', name: name -%}
+    {%- render 'icon', name: name, eager: true -%}
 
     <div class="cart-count">
       <cart-count

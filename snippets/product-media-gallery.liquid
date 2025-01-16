@@ -8,6 +8,8 @@
   {% render 'product-media-gallery' %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'product-media-gallery.component.css' %}
+
 {%- liquid
   assign default_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
   assign sizes = '(min-width: 48em) 60vw, 90vw'

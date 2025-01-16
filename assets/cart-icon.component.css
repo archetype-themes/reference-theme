@@ -1,0 +1,32 @@
+cart-count {
+  display: block;
+}
+
+.cart-icon {
+  display: block;
+  position: relative;
+  width: var(--size-6-5);
+  height: var(--size-6-5);
+}
+
+.cart-count {
+  position: absolute;
+  left: 1.1rem;
+  top: calc(-1 * var(--size-1));
+}
+
+.cart-count__text {
+  display: grid;
+  place-items: center;
+  min-width: min-content;
+  width: var(--size-4);
+  height: var(--size-4);
+  font-size: 0.6875rem;
+  font-weight: bold;
+  color: rgb(var(--color-background));
+  background-color: rgb(var(--color-foreground));
+  border-radius: var(--radius-rounded);
+  padding-inline-start: var(--size-1);
+  padding-inline-end: var(--size-1);
+  line-height: 1;
+}

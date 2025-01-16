@@ -1,0 +1,23 @@
+[data-color-scheme='scheme-1'] {
+  --color-background: var(--color-scheme-1-bg);
+  --color-foreground: var(--color-scheme-1-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+[data-color-scheme='scheme-2'] {
+  --color-background: var(--color-scheme-2-bg);
+  --color-foreground: var(--color-scheme-2-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}
+
+[data-color-scheme='scheme-3'] {
+  --color-background: var(--color-scheme-3-bg);
+  --color-foreground: var(--color-scheme-3-text);
+
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+}

@@ -10,6 +10,8 @@
   {%- endfor -%}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'line-item.component.css' %}
+
 <div class="line-item">
   {%- liquid
     assign loading = 'lazy'
