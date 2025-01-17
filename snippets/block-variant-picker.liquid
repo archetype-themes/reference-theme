@@ -10,6 +10,8 @@
   {% render 'block-variant-picker', block: block %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'component.block-variant-picker.css' %}
+
 {%- liquid
   assign update_url = update_url | default: true, allow_false: true
 -%}
@@ -39,6 +41,6 @@
   </block-variant-picker>
 
   <script type="module">
-    import 'components/block-variant-picker'
+    import 'component.block-variant-picker'
   </script>
 {%- endunless -%}

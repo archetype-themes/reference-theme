@@ -3,44 +3,35 @@
 
   Accepts:
   - name {string} - Name of the icon
-  - directory {string} - Directory of the icon (optional)
-  - prepend {boolean} - Prepends the icon name with a string (optional)
-  - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
+  - libary {string} - Select a non-default library of icons to load from (optional)
 
   Usage:
   {% render 'icon', name: 'alert' %}
 {% endcomment %}
 
-{%- liquid
-  assign name = name
-  assign directory = directory | default: settings.icon_directory | default: 'theme-assets'
-  assign prepend = prepend | default: false
-  assign hydration = hydration | default: 'on:visible'
+{% liquid
+  assign name = name | default: 'alert'
+  assign library = library | default: settings.icon_library | default: 'default'
 
-  if prepend == false
-    assign file_name = name | append: '.svg'
+  # check to see if theme icon override has been set
+  capture theme_icon
+    assign full_name = 'theme.' | append: name | append: '.svg'
+    echo full_name | inline_asset_content
+  endcapture
+  assign theme_icon = theme_icon | strip
+
+  # If icon does not exist, theme_icon will contain an error message.
+  # Check to see if contents are svg.
+  if theme_icon contains '<svg>'
+    echo theme_icon
   else
-    assign prefix = prefix | default: settings.icon_file_prepend | default: 'icon-'
-    assign file_name = name | prepend: prefix | append: '.svg'
+    # check to see if built-in libary icon exists
+    if library == 'tcwi'
+      assign full_name = 'tcwi.' | append: name | append: '.svg'
+      echo full_name | inline_asset_content
+    else
+      assign full_name = 'icon.' | append: name | append: '.svg'
+      echo full_name | inline_asset_content
+    endif
   endif
-
-  if directory == 'theme-assets'
-    assign url = file_name | asset_url
-  else
-    assign url = directory | append: file_name
-  endif
--%}
-
-<is-land {{ hydration }}>
-  <x-icon
-    src="{{ url }}"
-    name="{{ name }}"
-  >
-  </x-icon>
-
-  <template data-island>
-    <script type="module">
-      import 'components/icon'
-    </script>
-  </template>
-</is-land>
+%}

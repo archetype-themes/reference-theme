@@ -28,6 +28,8 @@
   %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'component.section-media-with-text.css' %}
+
 {% liquid
   assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: true, allow_false: true
   assign media_width = media_width | default: section.settings.media_width | default: '50'

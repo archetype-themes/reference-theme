@@ -1,4 +1,4 @@
-import { EVENTS, subscribe } from '@archetype-themes/utils/pubsub'
+import { EVENTS, subscribe } from 'util.pubsub'
 
 class VariantSku extends HTMLElement {
   connectedCallback() {

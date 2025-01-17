@@ -1,0 +1,12 @@
+/* Override the above for our stroke-only icons */
+svg.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--icon-width-size, var(--icon-size, 20px));
+  height: var(--icon-height-size, var(--icon-size, 20px));
+
+  &.icon--line {
+    stroke-width: var(--icon-stroke-width, 2px);
+    stroke-linejoin: var(--icon-stroke-line-join, miter);
+  }
+}

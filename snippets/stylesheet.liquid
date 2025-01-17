@@ -1,0 +1,53 @@
+{%- comment -%}
+  Renders a stylesheet link or inline style based on the section location and index.
+
+  Accepts:
+  - name {string} - The name of the stylesheet asset, e.g. 'styles.css'
+  - async {boolean} - Whether to load the stylesheet asynchronously
+  - inline {boolean} - Whether to inline the stylesheet content
+  - blocking {boolean} - Whether to load the stylesheet blocking
+
+  Usage:
+  {% render 'stylesheet', name: 'styles.css', async: true %}
+{%- endcomment -%}
+
+{%- liquid 
+  assign name = name | default: ''
+
+  # Default inline logic based on section location and index
+  assign default_inline = false
+
+  if section.location == 'header'
+    assign default_inline = true
+  endif
+
+  if section.location == 'template' and section.index <= 2
+    assign default_inline = true
+  endif
+
+  # Proritize specific overrides
+  if inline == true
+    assign choice = 'inline'
+  elsif async == true
+    assign choice = 'async'
+  elsif blocking == true
+    assign choice = 'blocking'
+
+  # Default to async unless default inline criteria are met
+  elsif default_inline
+    assign choice = 'inline'
+  else 
+    assign choice = 'async'
+  endif
+
+  assign inline = inline | default: default_inline, allow_false: true
+-%}
+
+{%- if choice == 'async' -%}
+  <link href="{{ name | asset_url }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ name | asset_url }}"></noscript>
+{%- elsif choice == 'inline' -%}
+  <style>{{ name | inline_asset_content }}</style>
+{% elsif choice == 'blocking' %}
+  {{ name | asset_url | stylesheet_tag }}
+{% endif %}
