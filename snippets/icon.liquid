@@ -9,6 +9,8 @@
   {% render 'icon', name: 'alert' %}
 {% endcomment %}
 
+{%- render 'stylesheet', name: 'component.icon.css' -%}
+
 {% liquid
   assign name = name | default: 'alert'
   assign library = library | default: settings.icon_library | default: 'default'
