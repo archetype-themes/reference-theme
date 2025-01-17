@@ -1,0 +1,139 @@
+.rte {
+  margin-bottom: calc(var(--gutter) / 4);
+
+  @media only screen and (min-width: 769px) {
+    margin-bottom: calc(var(--gutter) / 2);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & + .rte {
+    margin-top: var(--gutter);
+  }
+
+  & p,
+  & ul,
+  & ol,
+  & table {
+    margin-bottom: var(--size-3-5);
+
+    @media only screen and (min-width: 769px) {
+      margin-bottom: var(--size-6);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & ul {
+    & ul {
+      margin-bottom: 0;
+    }
+  }
+
+  /*Add some top margin to headers from the rich text editor*/
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    margin-top: var(--size-14);
+    margin-bottom: var(--size-6);
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  /*In case merchants paste meta tags into their content by accident*/
+  & meta:first-child {
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 0;
+    }
+  }
+
+  /*Mimic a paragraph tag because they're not always created*/
+  & > div {
+    margin-bottom: calc(var(--gutter) / 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & li {
+    margin-bottom: 0;
+  }
+
+  & table {
+    table-layout: fixed;
+  }
+}
+
+.rte--block {
+  margin-bottom: var(--size-2);
+
+  @media only screen and (min-width: 769px) {
+    margin-bottom: var(--size-3);
+  }
+}
+
+.rte-setting {
+  & > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.rte,
+.rte-setting {
+  & a {
+    text-decoration: none;
+  }
+
+  & img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  & a:not(.rte__image):not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  & a.rte__image:after {
+    content: none;
+  }
+}
+
+.text-center .rte,
+.text-center.rte {
+  & ul,
+  & ol {
+    list-style-position: inside;
+    margin-left: 0;
+  }
+}
+
+.rte--nomargin {
+  margin-bottom: 0;
+}

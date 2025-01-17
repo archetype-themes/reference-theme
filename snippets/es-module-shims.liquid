@@ -10,7 +10,7 @@
   if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
     const el = document.createElement('script')
     el.async = true
-    el.src = "{{ 'es-module-shims.min.js' | asset_url }}"
+    el.src = "{{ 'vendor.es-module-shims.min.js' | asset_url }}"
     document.head.appendChild(el)
   }
 </script>

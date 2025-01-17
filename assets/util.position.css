@@ -1,0 +1,33 @@
+.relative {
+  position: relative;
+}
+
+.text-left,
+[data-text='left'] {
+  text-align: start;
+}
+
+.text-center,
+[data-text='center'] {
+  text-align: center;
+}
+
+.text-right,
+[data-text='right'] {
+  text-align: end;
+}
+
+.justify-top,
+[data-justify='top'] {
+  justify-content: flex-start;
+}
+
+.justify-center,
+[data-justify='center'] {
+  justify-content: center;
+}
+
+.justify-bottom,
+[data-justify='bottom'] {
+  justify-content: flex-end;
+}
