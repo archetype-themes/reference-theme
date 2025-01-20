@@ -1,0 +1,134 @@
+# This GitHub Actions workflow automates the release process.
+#
+# Outcomes:
+# - Create a new release by merging an automatically generated PR
+# - Update store with latest version by merging an automatically generated PR
+# - Easy access to theme zip for uploading to Shopify Theme Store + Theme Updater App
+# - Automatically update our CHANGELOG.md
+#
+# Steps:
+# - Creates Pull Request that when merged triggers the release flow
+# - Bumps repo version based on contents of commits that follow [conventional commit] pattern, ie. breaking, feature, patch
+# - Bumps version in project files, such as settings_schema.json
+# - Updates CHANGELOG.md based on contents of conventional commits
+# - Creates a published Github release when release PR is merged
+# - Uploads theme zip generated from `shopify theme package` to Github release
+# - Creates PRs to push latest release to */production branches
+#
+# Setup:
+# - Create the appropriate branches in the repo (*/main, */develop, */staging, */production)
+# - Add the contents of the `.github/STORE_CONFIG.json` as an repository variable named `STORE_CONFIG` (Settings > Secrets and variables > Actions > Repository variables)
+# - Create a simple Github App for authentication and set the `ARCHETYPE_GITHUB_APP_ID` and `ARCHETYPE_GITHUB_APP_KEY` as organization secrets (https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      upload_url: ${{ steps.release.outputs.upload_url }}
+    steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ARCHETYPE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.ARCHETYPE_GITHUB_APP_KEY }}
+      - uses: archetype-themes/release-please-action@main
+        id: release
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+
+  deploy-release:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        store: ${{ fromJson(vars.STORE_CONFIG) }}
+    steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ARCHETYPE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.ARCHETYPE_GITHUB_APP_KEY }}
+
+      - name: Checkout the latest release or draft
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.store.name }}/production
+          token: ${{ steps.generate-token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Reset production branch
+        run: |
+          git checkout origin/${{ matrix.store.name }}/main -- .
+
+      - name: Create pull request from ${{ matrix.store.name }}/main to ${{ matrix.store.name }}/production
+        id: create-pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          branch: ${{ matrix.store.name }}/staging
+          commit-message: "Update to ${{ needs.release-please.outputs.tag_name }}"
+          title: 'Release ${{ needs.release-please.outputs.tag_name }} to ${{ matrix.store.name }}/production'
+          body: |
+            ### Merge this PR when ${{ needs.release-please.outputs.tag_name }} is live on the Shopify theme store.
+            
+            You can do any final testing before publishing in the [Staging Theme](${{ matrix.store.staging }})
+
+            If you need to make changes in the theme editor, [log into the admin](${{ matrix.store.admin }}) and customize the `${{ matrix.store.name }}/staging` theme.
+
+            > [!WARNING]
+            > After merging, you should double-check the ${{ matrix.store.name }}/production theme in the [${{ matrix.store.name }} store admin](${{ matrix.store.admin }}) and make sure it is running the version ${{ needs.release-please.outputs.tag_name }}. You might need to select `'...'` > `'Reset to latest commit'` on the theme to make sure the latest version is loaded.
+
+  upload-theme-asset:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ARCHETYPE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.ARCHETYPE_GITHUB_APP_KEY }}
+
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Shopify CLI
+        run: npm install -g @shopify/cli
+
+      - name: Package Theme
+        run: shopify theme package
+
+      - name: Find New Zip File
+        id: find-zip
+        run: |
+          zip_file=$(find . -name '*.zip' -type f)
+          echo "zip_file=$zip_file" >> $GITHUB_ENV
+          echo "zip_filename=$(basename $zip_file)" >> $GITHUB_ENV
+
+      - name: Upload Release Artifact
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: gh release upload ${{ needs.release-please.outputs.tag_name }} ${{ env.zip_file }}

@@ -12,6 +12,8 @@
   {% render 'block-model', block: block %}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'component.block-model.css' %}
+
 {% liquid
   assign product = block.settings.product | default: product
   assign media = media | default: product.media | where: 'media_type', 'model' | first
@@ -50,7 +52,7 @@
 
   <template data-island>
     <script type="module">
-      import 'components/block-model'
+      import 'component.block-model'
     </script>
   </template>
 </is-land>

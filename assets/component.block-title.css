@@ -1,0 +1,17 @@
+.block-title__heading {
+  &.h2 {
+    margin-bottom: var(--size-2);
+    font-size: var(--size-6);
+
+    @media only screen and (min-width: 769px) {
+      font-size: var(--size-8);
+    }
+  }
+}
+
+.block-title__sku,
+.block-title__vendor {
+  display: inline-block;
+  margin-right: var(--size-5);
+  font-size: var(--size-3-5);
+}

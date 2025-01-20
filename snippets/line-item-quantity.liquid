@@ -11,6 +11,8 @@
   {%- endfor -%}
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'component.line-item-quantity.css' %}
+
 {% liquid
   assign hydration = hydration | default: 'on:visible'
 %}
@@ -18,12 +20,14 @@
 <is-land {{ hydration }}>
   <line-item-quantity class="line-item-quantity" index="{{ line_item.index | plus: 1 }}" section-id="{{ section.id }}">
     <input type="text" inputmode="numeric" value="{{ line_item.quantity }}" min="1">
-    {{ 'actions.remove' | t | link_to: line_item.url_to_remove, class: 'line-item-quantity__remove' }}
+    <a href="{{ line_item.url_to_remove }}" class="line-item-quantity__remove">
+      {% render 't-with-fallback', key: 'actions.remove', fallback: 'Remove' %}
+    </a>
   </line-item-quantity>
 
   <template data-island>
     <script type="module">
-      import 'components/line-item-quantity'
+      import 'component.line-item-quantity'
     </script>
   </template>
 </is-land>

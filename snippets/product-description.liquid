@@ -9,7 +9,9 @@
 {% endcomment %}
 
 {%- liquid
-  assign description = 'info.placeholder_product_description' | t
+  capture description
+    render 't-with-fallback', key: 'info.placeholder_product_description', fallback: 'This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color, materials used, sizing, and where it was made.'
+  endcapture
 
   unless product.empty?
     assign description = product.description

@@ -1,0 +1,69 @@
+# If someone customizes the published theme in the theme editor, 
+# these changes are synced to the associated `*/production` branch as 
+# commits. We might want these edits to persist when the next release 
+# happens, so a PR is created to merge these customizations into the 
+# associated `*/main` branch.
+#
+# Outcomes:
+# - Makes sure that theme editor customizations made between releases don't get lost or erased when the next release is pushed to production
+# - Generates a PR with `autorelease:blocking` label which will block release-please PRs until production customizations are merged into `*/main` or the PR is closed.
+#
+# Steps:
+# - Triggered on push to any `*/production` branch
+# - Create a PR that merges any new commits from `*/production` into the associated `*/main` branch
+#
+# Setup:
+# - Create the appropriate branches in the repo (*/main, */develop, */staging, */production)
+# - Add the contents of the `.github/STORE_CONFIG.json` as an repository variable named `STORE_CONFIG` (Settings > Secrets and variables > Actions > Repository variables)
+# - Create a simple Github App for authentication and set the `ARCHETYPE_GITHUB_APP_ID` and `ARCHETYPE_GITHUB_APP_KEY` as organization secrets (https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/making-authenticated-api-requests-with-a-github-app-in-a-github-actions-workflow)
+
+
+name: Open PR for changes in store/production
+
+on:
+  push:
+    branches:
+      - '*/production'
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.author.email, 'shopify[bot]') || github.event.head_commit.author.name == 'shopify[bot]'
+
+    steps:
+      - name: Determine Store Name
+        id: store-name
+        run: echo "name=$(echo ${GITHUB_REF#refs/heads/} | cut -d/ -f1)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.ARCHETYPE_GITHUB_APP_ID }}
+          private_key: ${{ secrets.ARCHETYPE_GITHUB_APP_KEY }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.name }}/main
+          token: ${{ steps.generate-token.outputs.token }}
+          fetch-depth: 0
+
+      - name: Reset production branch
+        run: |
+          git checkout origin/${{ matrix.store.name }}/production -- .
+        
+
+      - name: Create or update PR
+        id: create-pr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+          commit-message: 'Update from ${{ env.name }}/production'
+          committer: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          branch: update-${{ env.name }}-main-from-production
+          title: 'Sync ${{ env.name }}/production to ${{ env.name }}/main'
+          body: 'This is an automated PR to sync changes from ${{ env.name }}/production to ${{ env.name }}/main'
+          labels: 'autorelease:blocking'

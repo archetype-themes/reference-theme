@@ -1,0 +1,30 @@
+.rich-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--size-5);
+}
+
+.rich-text > * {
+  margin-bottom: 0;
+}
+
+.rich-text__subheading {
+  font-size: var(--size-3-5);
+  text-transform: uppercase;
+}
+
+.rich-text__text {
+  line-height: 1.5;
+
+  @media only screen and (max-width: 768px) {
+    font-size: var(--size-3-5);
+  }
+}
+
+.rich-text__text p {
+  margin-top: 0;
+
+  @media only screen and (max-width: 768px) {
+    font-size: var(--size-3-5);
+  }
+}

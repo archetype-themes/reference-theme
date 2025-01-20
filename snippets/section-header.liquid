@@ -10,6 +10,8 @@
   {% render 'section-header' %}
 {% endcomment %}
 
+{%- render 'stylesheet', name: 'component.section-header.css' -%}
+
 {%- liquid
   assign menu_link_list = menu_link_list | default: section.settings.menu_link_list | default: 'main-menu'
   assign menu_position = menu_position | default: section.settings.menu_position | default: ''

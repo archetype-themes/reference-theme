@@ -1,0 +1,61 @@
+# A check that runs on release-please PRs that checks the `release-notes.md` 
+# file to make sure it exists and that it's contents are different from the 
+# previous release.
+
+# Outcomes:
+#  - Makes sure that we don't forget to update `release-notes.md` before 
+#    published a release
+  
+# Steps:
+# - Looks at the contents of `release-notes.md` from the last tag, and fails 
+#   if the contents have not changed in a commit since
+
+name: Check Release Notes
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check-release-notes:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.pull_request.head.ref == 'release-please--branches--main' &&
+      startsWith(github.event.pull_request.title, 'chore(main): release')
+
+    steps:
+      - name: Checkout the PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+
+      - name: Fetch all tags and branches
+        run: git fetch --all --tags
+
+      - name: Find previous release tag
+        id: previous_release
+        run: |
+          previous_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "previous_tag=$previous_tag" >> $GITHUB_ENV
+
+      - name: Diff release-notes.md
+        id: check_release_notes
+        run: |
+          if [ ! -f release-notes.md ]; then
+            echo "release-notes.md file does not exist. Failing the workflow."
+            exit 1
+          fi
+
+          previous_tag=${{ env.previous_tag }}
+          if ! git diff $previous_tag HEAD --name-only | grep -q "^release-notes.md$"; then
+            echo "release-notes.md file was not updated since the previous release. Failing the workflow."
+            exit 1
+          fi
+
+          echo "release-notes.md file has been updated since the previous release. Well done!"

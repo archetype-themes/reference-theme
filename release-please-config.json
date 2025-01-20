@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "packages": {
+    ".": {
+      "bootstrap-sha": "3910427e148a9f75f8108d69a7947d802de98005"
+    }
+  },
+  "extra-files": [
+    {
+      "type": "json",
+      "path": "config/settings_schema.json",
+      "jsonpath": "$[?(@.name == 'theme_info')].theme_version"
+    }
+  ]
+}
+

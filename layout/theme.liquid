@@ -16,20 +16,15 @@
 
     {%- render 'font-preload-link', font: settings.heading_font -%}
     {%- render 'font-preload-link', font: settings.body_font -%}
+    {%- render 'font-faces' -%}
 
     {%- render 'import-map' -%}
     {%- render 'es-module-shims' -%}
     {%- render 'is-land' -%}
 
-    {%- render 'font-faces' -%}
-    {%- render 'css-variables' -%}
-
-    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
-
     {{ content_for_header }}
 
-    <link type="text/css" href="{{ 'reference-components.css' | asset_url }}" rel="stylesheet">
-    <link type="text/css" href="{{ 'theme.css' | asset_url }}" rel="stylesheet">
+    {%- render 'styles-head' -%}
   </head>
 
   <body>

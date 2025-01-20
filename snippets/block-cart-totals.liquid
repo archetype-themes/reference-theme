@@ -5,12 +5,14 @@
   - hydration {'on:visible'|'on:idle'|'on:interaction'|'on:media'} - Hydration strategy
 {%- endcomment -%}
 
+{% render 'stylesheet', name: 'component.block-cart-totals.css' %}
+
 {% liquid
   assign hydration = hydration | default: 'on:visible'
 %}
 
 <div class="cart-totals" {{ block.shopify_attributes }}>
-  <span>{{ 'labels.total' | t }}</span>
+  <span>{% render 't-with-fallback', key: 'labels.total', fallback: 'Total' %}</span>
 
   <is-land {{ hydration }}>
     <cart-total-price class="cart-totals__price">
@@ -19,7 +21,7 @@
 
     <template data-island>
       <script type="module">
-        import 'components/block-cart-totals'
+        import 'component.block-cart-totals'
       </script>
     </template>
   </is-land>
