@@ -13,7 +13,7 @@ Before working with this theme, ensure you have the following tools installed on
 - [Shopify CLI](https://shopify.dev/docs/themes/tools/cli/install)
 - [Shopify CLI Theme Component plugin](https://github.com/archetype-themes/plugin-theme-component)
 
-After installation, import the latest changes of your components and locales into your theme by running the following command inside of this Shopify theme directory:
+After installation, import the latest changes of your components into your theme by running the following command inside of this Shopify theme directory:
 
 ```bash
 shopify theme component install
