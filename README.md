@@ -11,7 +11,7 @@ For lots more information, visit the [Devkit documentation](https://github.com/a
 Before working with this theme, ensure you have the following tools installed on your local development machine:
 
 - [Shopify CLI](https://shopify.dev/docs/themes/tools/cli/install)
-- [Shopify CLI Theme Component plugin](https://github.com/archetype-themes/plugin-theme-component)
+- [Devkit CLI plugin](https://github.com/archetype-themes/plugin-devkit)
 
 After installation, import the latest changes of your components into your theme by running the following command inside of this Shopify theme directory:
 
